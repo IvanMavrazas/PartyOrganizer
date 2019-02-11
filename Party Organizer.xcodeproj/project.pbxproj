@@ -65,18 +65,34 @@
 			isa = PBXGroup;
 			children = (
 				0B228A172212077E00081B4F /* AppDelegate.swift */,
+				0B228A3622121DAB00081B4F /* Controllers */,
+				0B228A3522121D4900081B4F /* View */,
+				0B228A1E2212077F00081B4F /* Assets.xcassets */,
+				0B228A202212077F00081B4F /* LaunchScreen.storyboard */,
+				0B228A232212077F00081B4F /* Info.plist */,
+			);
+			path = "Party Organizer";
+			sourceTree = "<group>";
+		};
+		0B228A3522121D4900081B4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B228A1B2212077E00081B4F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B228A3622121DAB00081B4F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				0B228A192212077E00081B4F /* PartiesViewController.swift */,
 				0B228A292212093900081B4F /* MembersViewController.swift */,
 				0B228A2D22120ADC00081B4F /* CreatePartyScreenViewController.swift */,
 				0B228A3122120BB100081B4F /* ProfileScreen.swift */,
 				0B228A2F22120B3900081B4F /* PartyMemberPreviewScreen.swift */,
 				0B228A3322120C2200081B4F /* AddMemberToParty.swift */,
-				0B228A1B2212077E00081B4F /* Main.storyboard */,
-				0B228A1E2212077F00081B4F /* Assets.xcassets */,
-				0B228A202212077F00081B4F /* LaunchScreen.storyboard */,
-				0B228A232212077F00081B4F /* Info.plist */,
 			);
-			path = "Party Organizer";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

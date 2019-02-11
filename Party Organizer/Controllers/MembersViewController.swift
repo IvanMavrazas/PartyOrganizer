@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MembersViewController.swift
 //  Party Organizer
 //
 //  Created by Ivan Mavrazas on 2/11/19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class PartiesViewController: UIViewController {
+class MembersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.title = "Members"
+    }
 
 }
-

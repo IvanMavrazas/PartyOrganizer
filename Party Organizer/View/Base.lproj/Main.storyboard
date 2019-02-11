@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="CBK-UM-XOl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bks-xD-GZa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bks-xD-GZa" firstAttribute="top" secondItem="lo5-r1-RTz" secondAttribute="top" id="503-ov-MTc"/>
+                            <constraint firstItem="lo5-r1-RTz" firstAttribute="bottom" secondItem="bks-xD-GZa" secondAttribute="bottom" id="Ret-ZX-POR"/>
+                            <constraint firstItem="lo5-r1-RTz" firstAttribute="trailing" secondItem="bks-xD-GZa" secondAttribute="trailing" id="fH1-6G-8kr"/>
+                            <constraint firstItem="bks-xD-GZa" firstAttribute="leading" secondItem="lo5-r1-RTz" secondAttribute="leading" id="y9q-dI-c2E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lo5-r1-RTz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Members" id="smp-rv-1z4"/>
@@ -26,22 +38,34 @@
             </objects>
             <point key="canvasLocation" x="1473" y="-264"/>
         </scene>
-        <!--Item-->
+        <!--Parties-->
         <scene sceneID="fGT-ng-AWH">
             <objects>
                 <viewController storyboardIdentifier="PartiesViewController" id="Qdl-wc-CYb" customClass="PartiesViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oj1-D7-Cew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="12a-rk-sBq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="12a-rk-sBq" firstAttribute="top" secondItem="TT1-SK-Lbt" secondAttribute="top" id="Jyf-RG-dsn"/>
+                            <constraint firstItem="TT1-SK-Lbt" firstAttribute="bottom" secondItem="12a-rk-sBq" secondAttribute="bottom" id="WGJ-qi-Jas"/>
+                            <constraint firstItem="12a-rk-sBq" firstAttribute="leading" secondItem="TT1-SK-Lbt" secondAttribute="leading" id="gn4-bl-s5v"/>
+                            <constraint firstItem="TT1-SK-Lbt" firstAttribute="trailing" secondItem="12a-rk-sBq" secondAttribute="trailing" id="hpm-HB-7rr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TT1-SK-Lbt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="iIU-HG-eb5"/>
+                    <tabBarItem key="tabBarItem" title="Parties" id="iIU-HG-eb5"/>
                     <navigationItem key="navigationItem" id="HhY-RB-RT1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvC-sC-CUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="859"/>
+            <point key="canvasLocation" x="1473" y="702"/>
         </scene>
         <!--Create Party Screen View Controller-->
         <scene sceneID="bRu-JO-z1o">
@@ -56,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE6-ip-fMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="859"/>
+            <point key="canvasLocation" x="2193" y="775"/>
         </scene>
         <!--Party Member Preview Screen-->
         <scene sceneID="vMF-HR-ply">
@@ -71,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7io-vf-JLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="859"/>
+            <point key="canvasLocation" x="2898" y="810"/>
         </scene>
         <!--Profile Screen-->
         <scene sceneID="qoD-Nh-UT0">
