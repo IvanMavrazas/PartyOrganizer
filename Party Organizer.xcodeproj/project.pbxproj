@@ -17,6 +17,8 @@
 		0B228A3022120B3900081B4F /* PartyMemberPreviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A2F22120B3900081B4F /* PartyMemberPreviewScreen.swift */; };
 		0B228A3222120BB100081B4F /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A3122120BB100081B4F /* ProfileScreen.swift */; };
 		0B228A3422120C2300081B4F /* AddMemberToParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A3322120C2200081B4F /* AddMemberToParty.swift */; };
+		0B228A392212253300081B4F /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A372212253300081B4F /* MemberTableViewCell.swift */; };
+		0B228A3A2212253300081B4F /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A382212253300081B4F /* MemberTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0B228A2F22120B3900081B4F /* PartyMemberPreviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMemberPreviewScreen.swift; sourceTree = "<group>"; };
 		0B228A3122120BB100081B4F /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		0B228A3322120C2200081B4F /* AddMemberToParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberToParty.swift; sourceTree = "<group>"; };
+		0B228A372212253300081B4F /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		0B228A382212253300081B4F /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0B228A1B2212077E00081B4F /* Main.storyboard */,
+				0B228A3B2212297000081B4F /* MemberCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +98,15 @@
 				0B228A3322120C2200081B4F /* AddMemberToParty.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0B228A3B2212297000081B4F /* MemberCell */ = {
+			isa = PBXGroup;
+			children = (
+				0B228A372212253300081B4F /* MemberTableViewCell.swift */,
+				0B228A382212253300081B4F /* MemberTableViewCell.xib */,
+			);
+			path = MemberCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +170,7 @@
 				0B228A222212077F00081B4F /* LaunchScreen.storyboard in Resources */,
 				0B228A1F2212077F00081B4F /* Assets.xcassets in Resources */,
 				0B228A1D2212077E00081B4F /* Main.storyboard in Resources */,
+				0B228A3A2212253300081B4F /* MemberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +188,7 @@
 				0B228A3022120B3900081B4F /* PartyMemberPreviewScreen.swift in Sources */,
 				0B228A182212077E00081B4F /* AppDelegate.swift in Sources */,
 				0B228A2E22120ADC00081B4F /* CreatePartyScreenViewController.swift in Sources */,
+				0B228A392212253300081B4F /* MemberTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
