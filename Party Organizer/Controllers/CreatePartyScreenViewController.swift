@@ -10,6 +10,15 @@ import UIKit
 
 class CreatePartyScreenViewController: UIViewController {
 
+    @IBOutlet weak var partyNameLabel: UILabel!
+    @IBOutlet weak var partyNameTextField: UITextField!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var startDateAndTimeTextField: UITextField!
+    @IBOutlet weak var membersLabel: UILabel!
+    @IBOutlet weak var numberOfMembersLabel: UILabel!
+    
+    @IBOutlet weak var membersTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
