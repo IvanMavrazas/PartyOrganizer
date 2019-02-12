@@ -21,6 +21,7 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         membersTableView.dataSource = self
         
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
+
         
     }
 
