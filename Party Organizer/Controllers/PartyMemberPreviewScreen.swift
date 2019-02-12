@@ -8,23 +8,30 @@
 
 import UIKit
 
-class PartyMemberPreviewScreen: UIViewController {
+class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    var membersArray = [Member]()
+    
+    @IBOutlet weak var memberTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        memberTableView.delegate = self
+        memberTableView.dataSource = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK - TableView DataSource Methods
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
+        
+        return cell
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return membersArray.count
+    }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class PartiesViewController: UITableViewController {
 
-    var partiesArray = ["New Year","Xmas"]
+    
     
     @IBOutlet var partiesTableView: UITableView!
     
@@ -31,12 +31,11 @@ class PartiesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartyTableViewCell", for: indexPath) as! PartyTableViewCell
-        cell.textLabel?.text = partiesArray[indexPath.row]
-        print(partiesArray[indexPath.row])
+
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return partiesArray.count
+        return 3
     }
 
 

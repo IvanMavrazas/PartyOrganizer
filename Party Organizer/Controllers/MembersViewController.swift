@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var membersArray = ["John","Sarah"]
+    
 
     @IBOutlet weak var membersTableView: UITableView!
     
@@ -19,6 +20,7 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         membersTableView.delegate = self
         membersTableView.dataSource = self
+
         
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
 
@@ -34,12 +36,20 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
-        cell.textLabel?.text = membersArray[indexPath.row]
-        print(membersArray[indexPath.row])
+
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return membersArray.count
+
+        return 1
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       
+        return 60
+    }
+    
+
 }

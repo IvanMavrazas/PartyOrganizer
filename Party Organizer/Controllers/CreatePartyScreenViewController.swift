@@ -58,12 +58,10 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     
     @IBAction func startDateAndTimePressed(_ sender: UIButton) {
         datePicker.isHidden = false
-//        setPartyDateAndTime()
+
         
     }
-//    func setPartyDateAndTime() {
-//
-//    }
+
     
 //    func showDatePicker() {
 //
