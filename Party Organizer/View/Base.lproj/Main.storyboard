@@ -54,7 +54,7 @@
         <!--Parties-->
         <scene sceneID="2CK-oC-OqG">
             <objects>
-                <tableViewController storyboardIdentifier="Parties2ViewController" id="OGH-VI-Gnb" customClass="Parties2ViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PartiesViewController" id="OGH-VI-Gnb" customClass="PartiesViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="os6-QD-ek0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,12 +77,12 @@
                     <navigationItem key="navigationItem" title="Parties" id="vqO-wE-4Jh">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Nct-RA-pWp">
                             <connections>
-                                <action selector="addPartyPressed:" destination="OGH-VI-Gnb" id="e00-EN-eaM"/>
+                                <action selector="addPartyPressed:" destination="OGH-VI-Gnb" id="PFH-J0-Khr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="partiesTableView" destination="os6-QD-ek0" id="tE7-yp-If2"/>
+                        <outlet property="partiesTableView" destination="os6-QD-ek0" id="Ltc-vY-cju"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHa-GZ-oN5" userLabel="First Responder" sceneMemberID="firstResponder"/>

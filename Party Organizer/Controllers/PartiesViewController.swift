@@ -8,11 +8,12 @@
 
 import UIKit
 
-class Parties2ViewController: UITableViewController {
+class PartiesViewController: UITableViewController {
 
     var partiesArray = ["New Year","Xmas"]
     
     @IBOutlet var partiesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,11 +40,10 @@ class Parties2ViewController: UITableViewController {
     }
 
 
-
     @IBAction func addPartyPressed(_ sender: UIBarButtonItem) {
         addParty()
-        print("addparty pressed")
     }
+    
     
     func addParty() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
