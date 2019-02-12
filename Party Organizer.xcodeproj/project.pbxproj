@@ -21,6 +21,7 @@
 		0BF835302212352D002ECD6C /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8352E2212352D002ECD6C /* PartyTableViewCell.swift */; };
 		0BF835312212352D002ECD6C /* PartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF8352F2212352D002ECD6C /* PartyTableViewCell.xib */; };
 		0BF835342212C2C1002ECD6C /* PartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF835332212C2C1002ECD6C /* PartiesViewController.swift */; };
+		0BF8353622131F5C002ECD6C /* MembersModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8353522131F5C002ECD6C /* MembersModelObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0BF8352E2212352D002ECD6C /* PartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 		0BF8352F2212352D002ECD6C /* PartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyTableViewCell.xib; sourceTree = "<group>"; };
 		0BF835332212C2C1002ECD6C /* PartiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesViewController.swift; sourceTree = "<group>"; };
+		0BF8353522131F5C002ECD6C /* MembersModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersModelObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				0B228A172212077E00081B4F /* AppDelegate.swift */,
+				0BF8353722131F63002ECD6C /* Model */,
 				0B228A3622121DAB00081B4F /* Controllers */,
 				0B228A3522121D4900081B4F /* View */,
 				0B228A1E2212077F00081B4F /* Assets.xcassets */,
@@ -121,6 +124,14 @@
 				0BF8352F2212352D002ECD6C /* PartyTableViewCell.xib */,
 			);
 			path = PartyCell;
+			sourceTree = "<group>";
+		};
+		0BF8353722131F63002ECD6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BF8353522131F5C002ECD6C /* MembersModelObject.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF8353622131F5C002ECD6C /* MembersModelObject.swift in Sources */,
 				0BF835302212352D002ECD6C /* PartyTableViewCell.swift in Sources */,
 				0B228A3222120BB100081B4F /* ProfileScreen.swift in Sources */,
 				0B228A3422120C2300081B4F /* AddMemberToParty.swift in Sources */,

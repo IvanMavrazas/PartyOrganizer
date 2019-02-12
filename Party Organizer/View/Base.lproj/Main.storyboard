@@ -134,25 +134,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zj-ab-qPa" userLabel="PartyDate">
                                         <rect key="frame" x="0.0" y="51" width="375" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.12.2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf2-VV-IA5">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="SMH-ky-WT3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12.12.2019" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10W-s0-rOn">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                                 <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyb-OI-GRU">
-                                                <rect key="frame" x="82" y="0.0" width="46" height="30"/>
+                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxO-Pt-UWl">
-                                                <rect key="frame" x="129" y="0.0" width="246" height="30"/>
+                                                <rect key="frame" x="139" y="0.0" width="236" height="30"/>
                                                 <state key="normal" title="Start date and time">
                                                     <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -163,15 +159,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Pf2-VV-IA5" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="8Ci-D7-0po"/>
                                             <constraint firstAttribute="trailing" secondItem="UxO-Pt-UWl" secondAttribute="trailing" id="CjD-5r-Foi"/>
                                             <constraint firstAttribute="bottom" secondItem="UxO-Pt-UWl" secondAttribute="bottom" id="Dr3-7P-WBu"/>
                                             <constraint firstAttribute="bottom" secondItem="Tyb-OI-GRU" secondAttribute="bottom" id="HYt-z0-dYc"/>
+                                            <constraint firstItem="10W-s0-rOn" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="Hx9-f2-mgZ"/>
+                                            <constraint firstItem="10W-s0-rOn" firstAttribute="leading" secondItem="4zj-ab-qPa" secondAttribute="leading" id="I7R-DR-CLy"/>
                                             <constraint firstItem="Tyb-OI-GRU" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="T8S-ll-ecc"/>
-                                            <constraint firstAttribute="bottom" secondItem="Pf2-VV-IA5" secondAttribute="bottom" id="XYN-b4-yZU"/>
-                                            <constraint firstItem="Pf2-VV-IA5" firstAttribute="leading" secondItem="4zj-ab-qPa" secondAttribute="leading" id="am2-8W-tQY"/>
+                                            <constraint firstAttribute="bottom" secondItem="10W-s0-rOn" secondAttribute="bottom" id="UWn-36-wrb"/>
+                                            <constraint firstItem="Tyb-OI-GRU" firstAttribute="leading" secondItem="10W-s0-rOn" secondAttribute="trailing" constant="2" id="c0h-PC-LFb"/>
                                             <constraint firstItem="UxO-Pt-UWl" firstAttribute="leading" secondItem="Tyb-OI-GRU" secondAttribute="trailing" constant="1" id="c1G-p8-xws"/>
-                                            <constraint firstItem="Tyb-OI-GRU" firstAttribute="leading" secondItem="Pf2-VV-IA5" secondAttribute="trailing" constant="2" id="nz6-7b-TVl"/>
                                             <constraint firstItem="UxO-Pt-UWl" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="pH9-RH-BkS"/>
                                         </constraints>
                                     </view>
@@ -306,7 +302,7 @@
                         <outlet property="numberOfMembersLabel" destination="tuV-uh-DHR" id="odZ-OR-cbS"/>
                         <outlet property="partyNameLabel" destination="KuB-4L-h5s" id="XQF-vU-zGa"/>
                         <outlet property="partyNameTextField" destination="2s3-mL-PTm" id="UTS-ZT-VsR"/>
-                        <outlet property="startDateLabel" destination="Pf2-VV-IA5" id="rin-pg-4YL"/>
+                        <outlet property="startDateAndTimeTextField" destination="10W-s0-rOn" id="ma4-cO-QKA"/>
                         <outlet property="startTimeLabel" destination="Tyb-OI-GRU" id="aqn-bc-uzh"/>
                     </connections>
                 </viewController>

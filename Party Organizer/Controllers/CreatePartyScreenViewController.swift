@@ -14,7 +14,9 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
 
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var partyNameTextField: UITextField!
-    @IBOutlet weak var startDateLabel: UILabel!
+    
+    @IBOutlet weak var startDateAndTimeTextField: UITextField!
+    
     @IBOutlet weak var startTimeLabel: UILabel!
     
     @IBOutlet weak var membersLabel: UILabel!
@@ -56,17 +58,36 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     
     @IBAction func startDateAndTimePressed(_ sender: UIButton) {
         datePicker.isHidden = false
-        
-        
-    }
-    func setPartyDateAndTime() {
+//        setPartyDateAndTime()
         
     }
+//    func setPartyDateAndTime() {
+//
+//    }
     
-    func showDatePicker() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
-        startDateLabel.text = formatter.string(from: datePicker.date)
-    }
+//    func showDatePicker() {
+//
+////        datePicker = UIDatePicker()
+////        datePicker.datePickerMode = .date
+////        datePicker.addTarget(self, action: #selector(UIViewController.dateChanged), for: .valueChanged)
+////
+////        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UIViewController.viewTapped(gestureRecognizer:)))
+////
+////        view.addGestureRecognizer(tapGesture)
+////        startDateAndTimeTextField.inputView = datePicker
+////
+//
+//    }
+    
+//    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+//    view.endEditing(true)
+//    }
+//
+//    @objc func dateChanged(datePicker: UIDatePicker) {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd/yyyy/hh/mm"
+//        startDateAndTimeTextField.text = dateFormatter.string(from: datePicker.date)
+//        view.endEditing(true)
+//    }
 }
 
