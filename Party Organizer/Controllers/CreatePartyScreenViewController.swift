@@ -17,5 +17,12 @@ class CreatePartyScreenViewController: UIViewController {
     }
     
 
-
+    @IBAction func saveNewPartyPressed(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func membersButtonPressed(_ sender: UIButton) {
+    }
+    
+    
 }

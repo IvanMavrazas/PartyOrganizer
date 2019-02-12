@@ -42,6 +42,7 @@ class PartiesViewController: UITableViewController {
 
     @IBAction func addPartyPressed(_ sender: UIBarButtonItem) {
         addParty()
+        
     }
     
     
