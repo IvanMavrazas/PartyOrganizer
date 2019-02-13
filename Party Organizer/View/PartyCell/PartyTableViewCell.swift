@@ -29,9 +29,10 @@ class PartyTableViewCell: UITableViewCell,PartySavedDelegate {
     }
     
     func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
-        partyNameLabel.text = partyName
-        startDateLabel.text = partyDateAndTime
-        partyDescriptionLabel.text = partyDescription
+//        partyNameLabel.text = partyName
+//        startDateLabel.text = partyDateAndTime
+//        partyDescriptionLabel.text = partyDescription
+        
     }
     
 }

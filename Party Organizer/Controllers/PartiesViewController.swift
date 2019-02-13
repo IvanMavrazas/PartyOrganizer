@@ -57,10 +57,11 @@ class PartiesViewController: UITableViewController,PartySavedDelegate {
     
 
     func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
-        let party = Party()
-        party.name = partyName
-        party.date = partyDateAndTime
-        party.description = partyDescription
-        
+//        let party = Party()
+//        party.name = partyName
+//        party.date = partyDateAndTime
+//        party.description = partyDescription
+//
+        print(partyName)
     }
 }
