@@ -9,9 +9,9 @@
 import UIKit
 import Kingfisher
 
-class PartiesViewController: UITableViewController {
+class PartiesViewController: UITableViewController,PartySavedDelegate {
 
-    
+    var parties = [Party]()
     
     @IBOutlet var partiesTableView: UITableView!
     
@@ -20,6 +20,7 @@ class PartiesViewController: UITableViewController {
 
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
 
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +33,7 @@ class PartiesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartyTableViewCell", for: indexPath) as! PartyTableViewCell
-
+ 
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,5 +53,14 @@ class PartiesViewController: UITableViewController {
             fatalError("Couldn't load CreatePartyScreenViewController")
         }
         show(createPartyVC, sender: self)
+    }
+    
+
+    func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
+        let party = Party()
+        party.name = partyName
+        party.date = partyDateAndTime
+        party.description = partyDescription
+        
     }
 }

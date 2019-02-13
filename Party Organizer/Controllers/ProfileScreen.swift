@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileScreen: UIViewController {
 
+    var profiles: Profiles?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -235,6 +235,7 @@
                                     </view>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-7i-e6l">
                                         <rect key="frame" x="0.0" y="295" width="375" height="308"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="308" id="O0E-ED-5x0"/>
                                         </constraints>
@@ -249,12 +250,20 @@
                                         </date>
                                         <locale key="locale" localeIdentifier="sr-Latn"/>
                                     </datePicker>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-UP-GTM">
+                                        <rect key="frame" x="0.0" y="295" width="375" height="308"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="4zj-ab-qPa" firstAttribute="leading" secondItem="leP-Ri-JiG" secondAttribute="leading" id="Jq9-tg-nTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="EsG-Gz-4g7" secondAttribute="trailing" id="Nke-e9-Z53"/>
                                     <constraint firstItem="4zj-ab-qPa" firstAttribute="top" secondItem="tEj-JY-xPg" secondAttribute="bottom" constant="1" id="OHQ-6m-eCh"/>
                                     <constraint firstAttribute="trailing" secondItem="REW-j5-GM4" secondAttribute="trailing" id="P2l-W7-CxW"/>
+                                    <constraint firstItem="aBq-UP-GTM" firstAttribute="height" secondItem="wy3-7i-e6l" secondAttribute="height" id="PIC-Ly-dfq"/>
                                     <constraint firstItem="tEj-JY-xPg" firstAttribute="leading" secondItem="leP-Ri-JiG" secondAttribute="leading" id="Q4M-rS-SDE"/>
                                     <constraint firstItem="REW-j5-GM4" firstAttribute="leading" secondItem="leP-Ri-JiG" secondAttribute="leading" id="Uaw-xU-uVV"/>
                                     <constraint firstItem="EsG-Gz-4g7" firstAttribute="leading" secondItem="leP-Ri-JiG" secondAttribute="leading" id="buQ-2O-zLp"/>
@@ -262,16 +271,21 @@
                                     <constraint firstAttribute="trailing" secondItem="4zj-ab-qPa" secondAttribute="trailing" id="eY1-XY-Ndm"/>
                                     <constraint firstItem="EsG-Gz-4g7" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="bottom" constant="1" id="fMC-z2-Xz6"/>
                                     <constraint firstItem="tEj-JY-xPg" firstAttribute="top" secondItem="leP-Ri-JiG" secondAttribute="top" id="kVv-eD-f4w"/>
+                                    <constraint firstItem="aBq-UP-GTM" firstAttribute="width" secondItem="wy3-7i-e6l" secondAttribute="width" id="ltK-yb-SEc"/>
                                     <constraint firstAttribute="trailing" secondItem="tEj-JY-xPg" secondAttribute="trailing" id="qeS-KX-iC4"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="leP-Ri-JiG" firstAttribute="top" secondItem="Lbm-y4-UAi" secondAttribute="top" id="GPl-bZ-7bI"/>
                             <constraint firstItem="Lbm-y4-UAi" firstAttribute="bottom" secondItem="leP-Ri-JiG" secondAttribute="bottom" id="HZa-E8-0MK"/>
                             <constraint firstItem="leP-Ri-JiG" firstAttribute="leading" secondItem="Lbm-y4-UAi" secondAttribute="leading" id="OLZ-c7-pRl"/>
+                            <constraint firstItem="Lbm-y4-UAi" firstAttribute="bottom" secondItem="aBq-UP-GTM" secondAttribute="bottom" id="QQC-m9-UAg"/>
                             <constraint firstItem="Lbm-y4-UAi" firstAttribute="bottom" secondItem="wy3-7i-e6l" secondAttribute="bottom" id="V0y-dK-2Am"/>
+                            <constraint firstItem="aBq-UP-GTM" firstAttribute="leading" secondItem="Lbm-y4-UAi" secondAttribute="leading" id="cbX-xb-0Te"/>
                             <constraint firstItem="wy3-7i-e6l" firstAttribute="leading" secondItem="Lbm-y4-UAi" secondAttribute="leading" id="dh1-rA-h4c"/>
+                            <constraint firstItem="aBq-UP-GTM" firstAttribute="trailing" secondItem="Lbm-y4-UAi" secondAttribute="trailing" id="eHo-ah-9ql"/>
                             <constraint firstItem="Lbm-y4-UAi" firstAttribute="trailing" secondItem="leP-Ri-JiG" secondAttribute="trailing" id="onv-6H-AFz"/>
                             <constraint firstItem="Lbm-y4-UAi" firstAttribute="trailing" secondItem="wy3-7i-e6l" secondAttribute="trailing" id="pgF-t7-DGp"/>
                         </constraints>
@@ -286,6 +300,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="wy3-7i-e6l" id="4qL-jW-TcJ"/>
+                        <outlet property="descriptionPartyTextView" destination="aBq-UP-GTM" id="Aux-cl-Q32"/>
                         <outlet property="membersLabel" destination="C9K-db-G0Y" id="Eci-bw-nNF"/>
                         <outlet property="membersTableView" destination="XdG-d8-BAq" id="t2c-0m-jru"/>
                         <outlet property="numberOfMembersLabel" destination="tuV-uh-DHR" id="odZ-OR-cbS"/>
@@ -301,6 +316,7 @@
         <!--Party Member Preview Screen-->
         <scene sceneID="vMF-HR-ply">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7io-vf-JLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PartyMemberPreviewScreen" id="Z0q-Ia-MiP" customClass="PartyMemberPreviewScreen" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7C-Jn-2Gm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -316,6 +332,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KsH-Me-PT9" id="Gd1-UQ-5Si">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5c0-fK-254">
+                                                    <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <items>
+                                                        <navigationItem title="Members" id="ksF-XL-xqi">
+                                                            <barButtonItem key="rightBarButtonItem" title="Save" id="5Q9-F7-pdn"/>
+                                                        </navigationItem>
+                                                    </items>
+                                                </navigationBar>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -334,7 +361,6 @@
                         <outlet property="memberTableView" destination="MfA-uk-Pmr" id="qVN-nU-SV6"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7io-vf-JLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4767" y="809"/>
         </scene>

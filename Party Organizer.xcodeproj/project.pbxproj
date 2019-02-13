@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B158A3022143DE8004CAC0E /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B158A2F22143DE8004CAC0E /* Party.swift */; };
 		0B228A182212077E00081B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A172212077E00081B4F /* AppDelegate.swift */; };
 		0B228A1D2212077E00081B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A1B2212077E00081B4F /* Main.storyboard */; };
 		0B228A1F2212077F00081B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A1E2212077F00081B4F /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B158A2F22143DE8004CAC0E /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		0B228A142212077E00081B4F /* Party Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B228A172212077E00081B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B228A1C2212077E00081B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF8353522131F5C002ECD6C /* MembersModelObject.swift */,
+				0B158A2F22143DE8004CAC0E /* Party.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				0BF8353622131F5C002ECD6C /* MembersModelObject.swift in Sources */,
 				0BF835302212352D002ECD6C /* PartyTableViewCell.swift in Sources */,
+				0B158A3022143DE8004CAC0E /* Party.swift in Sources */,
 				0B228A3222120BB100081B4F /* ProfileScreen.swift in Sources */,
 				0B228A3422120C2300081B4F /* AddMemberToParty.swift in Sources */,
 				0B228A2B2212093900081B4F /* MembersViewController.swift in Sources */,

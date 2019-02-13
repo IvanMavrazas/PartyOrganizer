@@ -9,7 +9,8 @@
 import UIKit
 import Kingfisher
 
-class PartyTableViewCell: UITableViewCell {
+class PartyTableViewCell: UITableViewCell,PartySavedDelegate {
+
 
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
@@ -17,13 +18,20 @@ class PartyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
+        partyNameLabel.text = partyName
+        startDateLabel.text = partyDateAndTime
+        partyDescriptionLabel.text = partyDescription
     }
     
 }

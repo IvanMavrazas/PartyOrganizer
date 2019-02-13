@@ -7,16 +7,20 @@
 //
 
 import UIKit
-
+protocol PartySavedDelegate {
+    func userSavedParty(partyName: String,partyDateAndTime: String,partyDescription: String)
+}
 class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var membersArray = ["Mary","Bill"]
+    var delegate: PartySavedDelegate?
+    
 
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var partyNameTextField: UITextField!
     
     @IBOutlet weak var startDateAndTimeTextField: UITextField!
     
+    @IBOutlet weak var descriptionPartyTextView: UITextView!
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var numberOfMembersLabel: UILabel!
     
@@ -29,23 +33,35 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         membersTableView.dataSource = self
         
         datePicker.isHidden = true
+        descriptionPartyTextView.isHidden = false
+        descriptionPartyTextView.text = nil
     }
+    
+    //MARK: TableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath)
-        cell.textLabel?.text = membersArray[indexPath.row]
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-        return membersArray.count
+        return 1
     }
 
     @IBAction func saveNewPartyPressed(_ sender: UIBarButtonItem) {
-        
+        if  let party = partyNameTextField.text,let dateAndTime = startDateAndTimeTextField.text, let description = descriptionPartyTextView.text {
+            delegate?.userSavedParty(partyName: party, partyDateAndTime: dateAndTime, partyDescription: description)
+        }
+        guard let partiesVC = storyboard?.instantiateViewController(withIdentifier: "PartiesViewController") as? PartiesViewController else {
+            fatalError("Couldn't load PartyMemberPreviewScreen")
+        }
+        show(partiesVC, sender: self)
     }
+    
+    //MARK: Button functions
     
     @IBAction func membersButtonPressed(_ sender: UIButton) {
         guard let partyMemberPreviewScreen = storyboard?.instantiateViewController(withIdentifier: "PartyMemberPreviewScreen") as? PartyMemberPreviewScreen else {
@@ -59,6 +75,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         showDatePicker()
     }
 
+    //MARK: Date picker
     
     func showDatePicker() {
 
@@ -69,7 +86,12 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
 
         view.addGestureRecognizer(tapGesture)
         startDateAndTimeTextField.inputView = datePicker
-
+        
+        if datePicker.isHidden == false {
+           descriptionPartyTextView.isHidden = true
+        } else {
+            descriptionPartyTextView.isHidden = false
+        }
 
     }
     
@@ -80,7 +102,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
 
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy/hh/mm"
+        dateFormatter.dateFormat = "MM/dd/yyyy / hh/mm"
         startDateAndTimeTextField.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
