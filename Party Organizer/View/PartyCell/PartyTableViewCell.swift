@@ -9,8 +9,21 @@
 import UIKit
 import Kingfisher
 
-class PartyTableViewCell: UITableViewCell,PartySavedDelegate {
+class PartyTableViewCell: UITableViewCell{
 
+    var party: Party? {
+        didSet {
+            if let partyName = party?.name {
+               partyNameLabel.text = partyName
+            }
+            if let partyDateAndTime = party?.date {
+                startDateLabel.text = partyDateAndTime
+            }
+            if let partyDescription = party?.description {
+                partyDescriptionLabel.text = partyDescription
+            }
+        }
+    }
 
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
@@ -28,11 +41,6 @@ class PartyTableViewCell: UITableViewCell,PartySavedDelegate {
         // Configure the view for the selected state
     }
     
-    func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
-//        partyNameLabel.text = partyName
-//        startDateLabel.text = partyDateAndTime
-//        partyDescriptionLabel.text = partyDescription
-        
-    }
+
     
 }

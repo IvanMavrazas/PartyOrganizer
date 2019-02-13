@@ -21,12 +21,24 @@ class ProfileScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         showProfileDetails()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.clipsToBounds = true
+    }
+    
+    func setupNavigationBar() {
+        let title = name.text
+        navigationItem.title = title
     }
     
     func populate(withObject object: Profiles?) {
-//        profileImage.image = UIImage(named: (object?.photo)!)
+        if let urlLink = object?.photo {
+            let url = URL(string: urlLink)
+            profileImage.kf.setImage(with: url)
+        }
         name.text = object?.username
         gender.text = object?.gender
         email.text = object?.email
@@ -46,36 +58,5 @@ class ProfileScreen: UIViewController {
         show(addMemberToPartyScreen, sender: self)
     }
     
-    func fetchData() {
-        guard let url = URL(string: "http://api-coin.quantox.tech/profiles.json") else { return }
-        print("url je \(url)")
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if error != nil { return }
-            
-            guard let httpResponse = response as? HTTPURLResponse else { return }
-            
-            if !(200..<300).contains(httpResponse.statusCode) { return }
-            
-            guard let data = data else { return }
-            
-            let decoder = JSONDecoder()
-            do {
-                let object = try decoder.decode(Object.self, from: data)
-                DispatchQueue.main.async {
-                    self.data = object
-                }
-            }
-            catch {
-                DispatchQueue.main.async {
-                    print("ERROR \(error.localizedDescription)")
-                    debugPrint(error.localizedDescription)
-                }
-            }
-        }
-        task.resume()
-    }
+
 }

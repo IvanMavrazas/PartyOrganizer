@@ -61,6 +61,18 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 60
     }
     
+    //MARK: TableView Delegate methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileScreen") as! ProfileScreen
+        let profiles = data?.profiles[indexPath.row]
+        profileVC.profiles = profiles
+        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+    }
+    
+    
     // MARK: FetchData
     
     func fetchData() {

@@ -20,30 +20,29 @@ class PartiesViewController: UITableViewController,PartySavedDelegate {
 
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
 
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = "Parties"
-        
-        
+        partiesTableView.reloadData()
     }
 
     //MARK - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartyTableViewCell", for: indexPath) as! PartyTableViewCell
- 
+            cell.party = parties[indexPath.row]
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return parties.count
     }
 
 
     @IBAction func addPartyPressed(_ sender: UIBarButtonItem) {
         addParty()
-        
     }
     
     
@@ -52,16 +51,14 @@ class PartiesViewController: UITableViewController,PartySavedDelegate {
         guard let createPartyVC = storyboard.instantiateViewController(withIdentifier: "CreatePartyScreenViewController") as? CreatePartyScreenViewController else {
             fatalError("Couldn't load CreatePartyScreenViewController")
         }
+        createPartyVC.delegate = self
+        createPartyVC.hidesBottomBarWhenPushed = true
         show(createPartyVC, sender: self)
     }
     
-
     func userSavedParty(partyName: String, partyDateAndTime: String, partyDescription: String) {
-//        let party = Party()
-//        party.name = partyName
-//        party.date = partyDateAndTime
-//        party.description = partyDescription
-//
+        let oneParty = Party(partyName: partyName, partyDate: partyDateAndTime, partyDescription: partyDescription)
+        parties.append(oneParty)
         print(partyName)
     }
 }

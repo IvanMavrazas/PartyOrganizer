@@ -22,20 +22,26 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        memberTableView.allowsMultipleSelection = true
         memberTableView.delegate = self
         memberTableView.dataSource = self
+        setupNavigationBar()
         
         memberTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
         
         fetchData()
     }
     
+    func setupNavigationBar() {
+        let title = "Members"
+        navigationItem.title = title
+    }
+    
     //MARK - TableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
-        
+        cell.selectionStyle = .none
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
         }
@@ -55,17 +61,19 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         return 60
     }
     
+
     //MARK: TableView Delegate methods
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileScreen") as! ProfileScreen 
-        let profiles = data?.profiles[indexPath.row]
-        profileVC.profiles = profiles
-        self.navigationController?.pushViewController(profileVC, animated: true)
-        
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
+    }
+
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
     }
     

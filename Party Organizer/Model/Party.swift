@@ -10,8 +10,14 @@ import Foundation
 
 class Party {
     
-    var name: String?
-    var date: String?
-    var description: String?
+    var name: String
+    var date: String
+    var description: String
+    
+    init(partyName: String,partyDate: String,partyDescription: String) {
+        name = partyName
+        date = partyDate
+        description = partyDescription
+    }
     
 }
