@@ -17,8 +17,6 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     
     @IBOutlet weak var startDateAndTimeTextField: UITextField!
     
-    @IBOutlet weak var startTimeLabel: UILabel!
-    
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var numberOfMembersLabel: UILabel!
     
@@ -57,35 +55,34 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     }
     
     @IBAction func startDateAndTimePressed(_ sender: UIButton) {
-        datePicker.isHidden = false
-
-        
+        datePicker!.isHidden = datePicker.isHidden == false
+        showDatePicker()
     }
 
     
-//    func showDatePicker() {
-//
-////        datePicker = UIDatePicker()
-////        datePicker.datePickerMode = .date
-////        datePicker.addTarget(self, action: #selector(UIViewController.dateChanged), for: .valueChanged)
-////
-////        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UIViewController.viewTapped(gestureRecognizer:)))
-////
-////        view.addGestureRecognizer(tapGesture)
-////        startDateAndTimeTextField.inputView = datePicker
-////
-//
-//    }
+    func showDatePicker() {
+
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
+
+        view.addGestureRecognizer(tapGesture)
+        startDateAndTimeTextField.inputView = datePicker
+
+
+    }
     
-//    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-//    view.endEditing(true)
-//    }
-//
-//    @objc func dateChanged(datePicker: UIDatePicker) {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MM/dd/yyyy/hh/mm"
-//        startDateAndTimeTextField.text = dateFormatter.string(from: datePicker.date)
-//        view.endEditing(true)
-//    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+        datePicker.isHidden = datePicker!.isHidden
+    }
+
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy/hh/mm"
+        startDateAndTimeTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
 }
 

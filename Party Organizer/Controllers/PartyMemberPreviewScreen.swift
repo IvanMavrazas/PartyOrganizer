@@ -20,6 +20,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         memberTableView.delegate = self
         memberTableView.dataSource = self
         
+        memberTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
     }
     
     //MARK - TableView DataSource Methods

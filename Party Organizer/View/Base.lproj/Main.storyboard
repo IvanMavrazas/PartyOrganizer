@@ -103,16 +103,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEj-JY-xPg" userLabel="PartyNameView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuB-4L-h5s">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuB-4L-h5s">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Party name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2s3-mL-PTm">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
-                                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -140,15 +138,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyb-OI-GRU">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxO-Pt-UWl">
-                                                <rect key="frame" x="139" y="0.0" width="236" height="30"/>
+                                                <rect key="frame" x="243" y="0.0" width="132" height="30"/>
                                                 <state key="normal" title="Start date and time">
                                                     <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -161,13 +152,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="UxO-Pt-UWl" secondAttribute="trailing" id="CjD-5r-Foi"/>
                                             <constraint firstAttribute="bottom" secondItem="UxO-Pt-UWl" secondAttribute="bottom" id="Dr3-7P-WBu"/>
-                                            <constraint firstAttribute="bottom" secondItem="Tyb-OI-GRU" secondAttribute="bottom" id="HYt-z0-dYc"/>
                                             <constraint firstItem="10W-s0-rOn" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="Hx9-f2-mgZ"/>
                                             <constraint firstItem="10W-s0-rOn" firstAttribute="leading" secondItem="4zj-ab-qPa" secondAttribute="leading" id="I7R-DR-CLy"/>
-                                            <constraint firstItem="Tyb-OI-GRU" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="T8S-ll-ecc"/>
                                             <constraint firstAttribute="bottom" secondItem="10W-s0-rOn" secondAttribute="bottom" id="UWn-36-wrb"/>
-                                            <constraint firstItem="Tyb-OI-GRU" firstAttribute="leading" secondItem="10W-s0-rOn" secondAttribute="trailing" constant="2" id="c0h-PC-LFb"/>
-                                            <constraint firstItem="UxO-Pt-UWl" firstAttribute="leading" secondItem="Tyb-OI-GRU" secondAttribute="trailing" constant="1" id="c1G-p8-xws"/>
                                             <constraint firstItem="UxO-Pt-UWl" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="pH9-RH-BkS"/>
                                         </constraints>
                                     </view>
@@ -246,20 +233,23 @@
                                             <constraint firstAttribute="trailing" secondItem="XdG-d8-BAq" secondAttribute="trailing" id="xOz-nq-9Xs"/>
                                         </constraints>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-7i-e6l">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-7i-e6l">
                                         <rect key="frame" x="0.0" y="295" width="375" height="308"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="308" id="O0E-ED-5x0"/>
                                         </constraints>
-                                        <date key="date" timeIntervalSinceReferenceDate="571670060.72577405">
-                                            <!--2019-02-12 13:14:20 +0000-->
+                                        <date key="date" timeIntervalSinceReferenceDate="571842860.72577405">
+                                            <!--2019-02-14 13:14:20 +0000-->
                                         </date>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="570798000">
-                                            <!--2019-02-02 11:00:00 +0000-->
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="571834800">
+                                            <!--2019-02-14 11:00:00 +0000-->
                                         </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="662641200">
+                                            <!--2021-12-31 11:00:00 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="sr-Latn"/>
                                     </datePicker>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="4zj-ab-qPa" firstAttribute="leading" secondItem="leP-Ri-JiG" secondAttribute="leading" id="Jq9-tg-nTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="EsG-Gz-4g7" secondAttribute="trailing" id="Nke-e9-Z53"/>
@@ -276,7 +266,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="leP-Ri-JiG" firstAttribute="top" secondItem="Lbm-y4-UAi" secondAttribute="top" id="GPl-bZ-7bI"/>
                             <constraint firstItem="Lbm-y4-UAi" firstAttribute="bottom" secondItem="leP-Ri-JiG" secondAttribute="bottom" id="HZa-E8-0MK"/>
@@ -303,7 +292,6 @@
                         <outlet property="partyNameLabel" destination="KuB-4L-h5s" id="XQF-vU-zGa"/>
                         <outlet property="partyNameTextField" destination="2s3-mL-PTm" id="UTS-ZT-VsR"/>
                         <outlet property="startDateAndTimeTextField" destination="10W-s0-rOn" id="ma4-cO-QKA"/>
-                        <outlet property="startTimeLabel" destination="Tyb-OI-GRU" id="aqn-bc-uzh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE6-ip-fMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
