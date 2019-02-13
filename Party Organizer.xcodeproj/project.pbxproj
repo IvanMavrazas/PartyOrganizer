@@ -22,6 +22,7 @@
 		0BF835312212352D002ECD6C /* PartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF8352F2212352D002ECD6C /* PartyTableViewCell.xib */; };
 		0BF835342212C2C1002ECD6C /* PartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF835332212C2C1002ECD6C /* PartiesViewController.swift */; };
 		0BF8353622131F5C002ECD6C /* MembersModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8353522131F5C002ECD6C /* MembersModelObject.swift */; };
+		67112E3F1B65E2245B875024 /* Pods_Party_Organizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CCCAA74A0CA9E47375DA91 /* Pods_Party_Organizer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,9 @@
 		0BF8352F2212352D002ECD6C /* PartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyTableViewCell.xib; sourceTree = "<group>"; };
 		0BF835332212C2C1002ECD6C /* PartiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesViewController.swift; sourceTree = "<group>"; };
 		0BF8353522131F5C002ECD6C /* MembersModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersModelObject.swift; sourceTree = "<group>"; };
+		18CCCAA74A0CA9E47375DA91 /* Pods_Party_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F022FD59252A9EF800F3C5C /* Pods-Party Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Party Organizer/Pods-Party Organizer.release.xcconfig"; sourceTree = "<group>"; };
+		32AC317BEA7CACD76F757D0F /* Pods-Party Organizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Party Organizer/Pods-Party Organizer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67112E3F1B65E2245B875024 /* Pods_Party_Organizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,8 @@
 			children = (
 				0B228A162212077E00081B4F /* Party Organizer */,
 				0B228A152212077E00081B4F /* Products */,
+				5458E473EC1FCFA7D01E4D3F /* Pods */,
+				8277D5C3A6E207D2001BC42B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +108,8 @@
 				0BF835332212C2C1002ECD6C /* PartiesViewController.swift */,
 				0B228A292212093900081B4F /* MembersViewController.swift */,
 				0B228A2D22120ADC00081B4F /* CreatePartyScreenViewController.swift */,
-				0B228A3122120BB100081B4F /* ProfileScreen.swift */,
 				0B228A2F22120B3900081B4F /* PartyMemberPreviewScreen.swift */,
+				0B228A3122120BB100081B4F /* ProfileScreen.swift */,
 				0B228A3322120C2200081B4F /* AddMemberToParty.swift */,
 			);
 			path = Controllers;
@@ -134,6 +141,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5458E473EC1FCFA7D01E4D3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32AC317BEA7CACD76F757D0F /* Pods-Party Organizer.debug.xcconfig */,
+				2F022FD59252A9EF800F3C5C /* Pods-Party Organizer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8277D5C3A6E207D2001BC42B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18CCCAA74A0CA9E47375DA91 /* Pods_Party_Organizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B228A262212077F00081B4F /* Build configuration list for PBXNativeTarget "Party Organizer" */;
 			buildPhases = (
+				C64E5B43F1465161291DC0DB /* [CP] Check Pods Manifest.lock */,
 				0B228A102212077E00081B4F /* Sources */,
 				0B228A112212077E00081B4F /* Frameworks */,
 				0B228A122212077E00081B4F /* Resources */,
+				F0C30BD029642501381EA732 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +227,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C64E5B43F1465161291DC0DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Party Organizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0C30BD029642501381EA732 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Party Organizer/Pods-Party Organizer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Party Organizer/Pods-Party Organizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B228A102212077E00081B4F /* Sources */ = {
@@ -360,6 +427,7 @@
 		};
 		0B228A272212077F00081B4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32AC317BEA7CACD76F757D0F /* Pods-Party Organizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +446,7 @@
 		};
 		0B228A282212077F00081B4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F022FD59252A9EF800F3C5C /* Pods-Party Organizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

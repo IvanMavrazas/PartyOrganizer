@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-    var membersArray = [Member]()
     
     @IBOutlet weak var memberTableView: UITableView!
     
@@ -31,7 +31,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return membersArray.count
+        return 1
     }
 
 }

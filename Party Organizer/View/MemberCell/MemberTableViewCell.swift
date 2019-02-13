@@ -10,6 +10,19 @@ import UIKit
 import Kingfisher
 
 class MemberTableViewCell: UITableViewCell {
+    
+    var profile: Profiles? {
+        didSet {
+            if let name = profile?.username {
+                memberName.text = name
+            }
+            if let photoURL = profile?.photo {
+                if let url = URL(string: photoURL) {
+                    memberImage.kf.setImage(with: url)
+                }
+            }
+        }
+    }
 
     @IBOutlet weak var memberImage: UIImageView!
     @IBOutlet weak var memberName: UILabel!
