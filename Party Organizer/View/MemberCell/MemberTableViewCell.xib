@@ -27,9 +27,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9q-Lo-IE6">
-                        <rect key="frame" x="56" y="5.5" width="270" height="50"/>
-                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.3710134845890411" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="63" y="5.5" width="263" height="50"/>
+                        <color key="backgroundColor" red="0.26274509800000001" green="0.90980392160000001" blue="0.58431372550000005" alpha="0.017150042808219176" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="rfU-Ii-Jtx"/>
                         </constraints>
@@ -44,7 +44,7 @@
                     <constraint firstAttribute="bottom" secondItem="hT1-2f-8Ie" secondAttribute="bottom" constant="5" id="Oev-0u-VQ4"/>
                     <constraint firstItem="hT1-2f-8Ie" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="PAj-nT-pwt"/>
                     <constraint firstItem="hT1-2f-8Ie" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qow-fZ-gra"/>
-                    <constraint firstItem="N9q-Lo-IE6" firstAttribute="leading" secondItem="hT1-2f-8Ie" secondAttribute="trailing" constant="1" id="abH-ON-Fva"/>
+                    <constraint firstItem="N9q-Lo-IE6" firstAttribute="leading" secondItem="hT1-2f-8Ie" secondAttribute="trailing" constant="8" id="abH-ON-Fva"/>
                     <constraint firstItem="N9q-Lo-IE6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="h3F-YX-acs"/>
                 </constraints>
             </tableViewCellContentView>

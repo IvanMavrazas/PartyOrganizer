@@ -29,7 +29,9 @@ class MemberTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        memberImage.layer.cornerRadius = memberImage.frame.width / 2
+        memberImage.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
