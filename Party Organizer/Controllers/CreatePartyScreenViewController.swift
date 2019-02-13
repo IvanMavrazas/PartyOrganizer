@@ -50,23 +50,27 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
       
         return 1
     }
+    
+
 
     @IBAction func saveNewPartyPressed(_ sender: UIBarButtonItem) {
         if  let party = partyNameTextField.text,let dateAndTime = startDateAndTimeTextField.text, let description = descriptionPartyTextView.text {
             delegate?.userSavedParty(partyName: party, partyDateAndTime: dateAndTime, partyDescription: description)
         }
-        guard let partiesVC = storyboard?.instantiateViewController(withIdentifier: "PartiesViewController") as? PartiesViewController else {
-            fatalError("Couldn't load PartyMemberPreviewScreen")
-        }
-        show(partiesVC, sender: self)
+
+     self.navigationController?.popViewController(animated: true)
+    
     }
     
     //MARK: Button functions
     
     @IBAction func membersButtonPressed(_ sender: UIButton) {
+        
+        
         guard let partyMemberPreviewScreen = storyboard?.instantiateViewController(withIdentifier: "PartyMemberPreviewScreen") as? PartyMemberPreviewScreen else {
             fatalError("Couldn't load PartyMemberPreviewScreen")
         }
+        partyMemberPreviewScreen.hidesBottomBarWhenPushed = true
         show(partyMemberPreviewScreen, sender: self)
     }
     
