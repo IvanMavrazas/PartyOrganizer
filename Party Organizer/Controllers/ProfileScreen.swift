@@ -40,6 +40,10 @@ class ProfileScreen: UIViewController {
 
     @IBAction func addToPartyPressed(_ sender: Any) {
         
+        guard let addMemberToPartyScreen = storyboard?.instantiateViewController(withIdentifier: "AddMemberToParty") as? AddMemberToParty else {
+            fatalError("Couldn't load AddMemberToParty")
+        }
+        show(addMemberToPartyScreen, sender: self)
     }
     
     func fetchData() {
