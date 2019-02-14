@@ -1,0 +1,20 @@
+PODS:
+  - Kingfisher (4.10.1)
+  - SwipeCellKit (2.5.1)
+
+DEPENDENCIES:
+  - Kingfisher
+  - SwipeCellKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
+
+PODFILE CHECKSUM: 598c352b0f22c8b89398a816af61ceceaed3dd87
+
+COCOAPODS: 1.5.2
