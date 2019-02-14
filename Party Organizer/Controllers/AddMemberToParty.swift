@@ -9,21 +9,20 @@
 import UIKit
 
 class AddMemberToParty: UITableViewController {
-
+    
     var parties = [Party]()
     
+    //Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "partyCell", for: indexPath)
-       
-        
         
         return cell
     }
@@ -32,5 +31,5 @@ class AddMemberToParty: UITableViewController {
         
         return parties.count
     }
-
+    
 }

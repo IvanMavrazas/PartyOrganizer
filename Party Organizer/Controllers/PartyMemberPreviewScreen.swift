@@ -10,15 +10,16 @@ import UIKit
 import Kingfisher
 
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+    
     var data: Object? {
         didSet {
             memberTableView.reloadData()
         }
-    }
-
+    }    
     
     @IBOutlet weak var memberTableView: UITableView!
+    
+    //Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         fetchData()
     }
     
+    
     func setupNavigationBar() {
         let title = "Members"
         navigationItem.title = title
@@ -42,6 +44,8 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
         cell.selectionStyle = .none
+        cell.delegate = self
+        
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
         }
@@ -52,7 +56,6 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         if let profiles = data?.profiles.count {
             return profiles
         }
-        
         return 1
     }
     
@@ -61,8 +64,8 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         return 60
     }
     
-
     //MARK: TableView Delegate methods
+    
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
@@ -73,7 +76,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
             cell.accessoryType = .checkmark
         }
     }
-
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
     }
     
@@ -112,4 +115,18 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         }
         task.resume()
     }
+}
+
+
+extension PartyMemberPreviewScreen: MemberTableViewCellDelegate {
+    func didTapImage(cell: MemberTableViewCell) {
+        guard let indexPath = self.memberTableView.indexPath(for: cell) else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileScreen") as!ProfileScreen
+        let profiles = data?.profiles[indexPath.row]
+        profileVC.profiles = profiles
+        self.navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+    
 }

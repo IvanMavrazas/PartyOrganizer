@@ -9,7 +9,12 @@
 import UIKit
 import Kingfisher
 
+protocol MemberTableViewCellDelegate: class {
+    func didTapImage(cell:MemberTableViewCell )
+}
 class MemberTableViewCell: UITableViewCell {
+    
+   weak var delegate: MemberTableViewCellDelegate?
     
     var profile: Profiles? {
         didSet {
@@ -29,14 +34,22 @@ class MemberTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupRoundImageCorners()
+        
+        let tapMemberImage = UITapGestureRecognizer(target: self, action: #selector(didTapMemberImage))
+        memberImage.isUserInteractionEnabled = true
+        memberImage.addGestureRecognizer(tapMemberImage)
+
+    }
+  
+    //Functions
+    
+    func setupRoundImageCorners() {
         memberImage.layer.cornerRadius = memberImage.frame.width / 2
         memberImage.clipsToBounds = true
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
     }
     
+    @objc func didTapMemberImage() {
+        delegate?.didTapImage(cell: self)
+    }
 }

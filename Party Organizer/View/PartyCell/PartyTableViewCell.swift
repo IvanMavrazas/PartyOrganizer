@@ -10,11 +10,11 @@ import UIKit
 import Kingfisher
 
 class PartyTableViewCell: UITableViewCell{
-
+    
     var party: Party? {
         didSet {
             if let partyName = party?.name {
-               partyNameLabel.text = partyName
+                partyNameLabel.text = partyName
             }
             if let partyDateAndTime = party?.date {
                 startDateLabel.text = partyDateAndTime
@@ -24,23 +24,24 @@ class PartyTableViewCell: UITableViewCell{
             }
         }
     }
-
+    
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var partyDescriptionLabel: UILabel!
+ 
+    //Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
-
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        
+    }
+    
+    
     
 }

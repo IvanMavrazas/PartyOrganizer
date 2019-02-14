@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileScreen: UIViewController {
-
+    
     var profiles: Profiles?
     var data: Object?
     
@@ -19,20 +19,45 @@ class ProfileScreen: UIViewController {
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var about: UITextView!
     
+    //Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showProfileDetails()
-        
+        setupRoundImageCorners()
+        setupNavigationBar()
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    //MARK: Buttons
+    
+    @IBAction func addToPartyPressed(_ sender: Any) {
+        
+        guard let addMemberToPartyScreen = storyboard?.instantiateViewController(withIdentifier: "AddMemberToParty") as? AddMemberToParty else {
+            fatalError("Couldn't load AddMemberToParty")
+        }
+        show(addMemberToPartyScreen, sender: self)
+    }
+    
+    //MARK: Functions
+    
+    // Adding corner radius on imageView
+    
+    func setupRoundImageCorners() {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
     }
     
+    // Change navigationItem title
+    
     func setupNavigationBar() {
-        let title = name.text
+        let title = "Profile"
         navigationItem.title = title
     }
+    
+    //Populate
     
     func populate(withObject object: Profiles?) {
         if let urlLink = object?.photo {
@@ -46,17 +71,10 @@ class ProfileScreen: UIViewController {
         
     }
     
+    //Show profile details
+    
     func showProfileDetails() {
         self.populate(withObject: profiles)
     }
-
-    @IBAction func addToPartyPressed(_ sender: Any) {
-        
-        guard let addMemberToPartyScreen = storyboard?.instantiateViewController(withIdentifier: "AddMemberToParty") as? AddMemberToParty else {
-            fatalError("Couldn't load AddMemberToParty")
-        }
-        show(addMemberToPartyScreen, sender: self)
-    }
     
-
 }

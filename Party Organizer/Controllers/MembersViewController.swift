@@ -11,30 +11,28 @@ import Kingfisher
 
 class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
     var data: Object? {
         didSet {
             membersTableView.reloadData()
         }
     }
-
+    
     @IBOutlet weak var membersTableView: UITableView!
     
+    //Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         membersTableView.delegate = self
         membersTableView.dataSource = self
-
-        
         membersTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.topItem?.title = "Members"
         fetchData()
     }
-
+    
     
     //MARK: TableView DataSource Methods
     
@@ -43,7 +41,6 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
         }
-        
         return cell
     }
     
@@ -57,7 +54,7 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       
+        
         return 60
     }
     
@@ -71,7 +68,6 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.navigationController?.pushViewController(profileVC, animated: true)
         
     }
-    
     
     // MARK: FetchData
     
