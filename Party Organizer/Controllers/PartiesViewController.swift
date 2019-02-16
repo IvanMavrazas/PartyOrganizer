@@ -25,7 +25,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         partiesTableView.delegate = self
         partiesTableView.dataSource = self
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
-        showEmptyScreen()
+        
         
     }
     
@@ -47,7 +47,12 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return parties.count
+        let numberOfParties = parties.count
+        if numberOfParties != 0 {
+            emptyScreenView.isHidden = true
+        }
+        return numberOfParties
+        
     }
     
     //MARK: Buttons
@@ -72,14 +77,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         show(createPartyVC, sender: self)
     }
     
-    // Show empty screen
-    
-    func showEmptyScreen() {
-        if partiesTableView.numberOfRows(inSection: parties.count) == 0 {
-            emptyScreenView.isHidden = false
-        }
-    }
-    
+
     // Adding corner radius on createPartyButton
     
     func setupRoundButtonCorners() {
