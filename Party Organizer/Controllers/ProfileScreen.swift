@@ -18,6 +18,7 @@ class ProfileScreen: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var about: UITextView!
+    @IBOutlet weak var addToPartyButton: UIButton!
     
     //Lifecycle
     
@@ -28,7 +29,8 @@ class ProfileScreen: UIViewController {
         setupNavigationBar()
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        setupRoundButtonCorners()
+        setupBorderOnProfileImage()
     }
     
     //MARK: Buttons
@@ -57,7 +59,7 @@ class ProfileScreen: UIViewController {
         navigationItem.title = title
     }
     
-    //Populate
+    // Populate
     
     func populate(withObject object: Profiles?) {
         if let urlLink = object?.photo {
@@ -71,10 +73,23 @@ class ProfileScreen: UIViewController {
         
     }
     
-    //Show profile details
+    // Show profile details
     
     func showProfileDetails() {
         self.populate(withObject: profiles)
     }
     
+    // Adding corner radius on addToPartyButton
+    
+    func setupRoundButtonCorners() {
+        addToPartyButton.layer.cornerRadius = 8
+        addToPartyButton.clipsToBounds = true
+    }
+    
+    //Setup borders on profileImage
+    
+    func setupBorderOnProfileImage() {
+        profileImage.layer.borderColor = UIColor.gray.cgColor
+        profileImage.layer.borderWidth = 1.0
+    }
 }

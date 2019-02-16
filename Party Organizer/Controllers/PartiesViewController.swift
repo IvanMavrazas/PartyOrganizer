@@ -9,50 +9,49 @@
 import UIKit
 
 class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+    
     // CreatePartyVC
     
     var parties = [Party]()
+    
     @IBOutlet weak var emptyScreenView: UIView!
-    
-    
     @IBOutlet weak var partiesTableView: UITableView!
-    
+    @IBOutlet weak var createPartyButton: UIButton!
     // Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         partiesTableView.delegate = self
         partiesTableView.dataSource = self
-        
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
         showEmptyScreen()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        setupRoundButtonCorners()
         super.viewWillAppear(animated)
-        partiesTableView.delegate = self
         navigationController?.navigationBar.topItem?.title = "Parties"
         partiesTableView.reloadData()
     }
     
     //MARK:  TableView DataSource Methods
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartyTableViewCell", for: indexPath) as! PartyTableViewCell
         cell.party = parties[indexPath.row]
         
         return cell
     }
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            return parties.count
-        
+        return parties.count
     }
     
     //MARK: Buttons
-   
+    
     @IBAction func addPartyPressed(_ sender: UIBarButtonItem) {
         addParty()
     }
@@ -61,7 +60,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         addParty()
     }
     
-    //Functions
+    //MARK: Functions
     
     func addParty() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -72,12 +71,22 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         createPartyVC.hidesBottomBarWhenPushed = true
         show(createPartyVC, sender: self)
     }
-
+    
+    // Show empty screen
+    
     func showEmptyScreen() {
         if partiesTableView.numberOfRows(inSection: parties.count) == 0 {
             emptyScreenView.isHidden = false
         }
     }
+    
+    // Adding corner radius on createPartyButton
+    
+    func setupRoundButtonCorners() {
+        createPartyButton.layer.cornerRadius = 8
+        createPartyButton.clipsToBounds = true
+    }
+    
 }
 
 extension PartiesViewController: PartySavedDelegate {
@@ -86,5 +95,5 @@ extension PartiesViewController: PartySavedDelegate {
         parties.append(oneParty)
         print(oneParty)
     }
-
+    
 }

@@ -184,6 +184,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createPartyButton" destination="ogG-s9-4Yy" id="Wi2-Eo-c1Q"/>
                         <outlet property="emptyScreenView" destination="P7U-yk-bHN" id="WTk-jR-c2n"/>
                         <outlet property="partiesTableView" destination="Dc4-gn-JNM" id="8JH-wR-eZe"/>
                     </connections>
@@ -664,6 +665,7 @@
                     </view>
                     <connections>
                         <outlet property="about" destination="lrb-YY-x5E" id="EML-gR-bAi"/>
+                        <outlet property="addToPartyButton" destination="WNM-xt-IYI" id="q12-QF-HVj"/>
                         <outlet property="email" destination="LQc-VJ-rbK" id="nhZ-IE-V4B"/>
                         <outlet property="gender" destination="g4c-ib-Zx6" id="906-mp-9ac"/>
                         <outlet property="name" destination="G3l-QB-6dc" id="gff-Eq-w4k"/>
