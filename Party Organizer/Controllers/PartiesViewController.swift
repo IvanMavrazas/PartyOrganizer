@@ -48,11 +48,9 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
             return parties.count
-
         
     }
     
-
     //MARK: Buttons
    
     @IBAction func addPartyPressed(_ sender: UIBarButtonItem) {
