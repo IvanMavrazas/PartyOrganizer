@@ -50,6 +50,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         return 1
     }
   
+    
     //MARK: Buttons
     
     @IBAction func saveNewPartyPressed(_ sender: UIBarButtonItem) {

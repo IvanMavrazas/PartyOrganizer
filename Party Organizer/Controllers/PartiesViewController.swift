@@ -25,7 +25,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         partiesTableView.delegate = self
         partiesTableView.dataSource = self
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
-        
+        partiesTableView.rowHeight = UITableView.automaticDimension
         
     }
     
@@ -35,6 +35,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = "Parties"
         partiesTableView.reloadData()
+ 
     }
     
     //MARK:  TableView DataSource Methods
@@ -52,8 +53,9 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
             emptyScreenView.isHidden = true
         }
         return numberOfParties
-        
     }
+    
+
     
     //MARK: Buttons
     

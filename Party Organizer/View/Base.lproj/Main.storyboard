@@ -284,39 +284,20 @@
                                                     <action selector="membersButtonPressed:" destination="C23-lM-tkg" eventType="touchUpInside" id="xGT-Ra-dMa"/>
                                                 </connections>
                                             </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-EW-SYe">
-                                                <rect key="frame" x="114" y="0.0" width="261" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="textCell" id="a7A-s6-1py">
-                                                        <rect key="frame" x="0.0" y="28" width="261" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a7A-s6-1py" id="giS-fP-piJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="34k-cg-Hld"/>
                                             <constraint firstAttribute="bottom" secondItem="tuV-uh-DHR" secondAttribute="bottom" constant="8" id="BZr-OK-qzt"/>
-                                            <constraint firstItem="PT2-EW-SYe" firstAttribute="height" secondItem="hHM-02-1p8" secondAttribute="height" id="EAU-tB-7Um"/>
                                             <constraint firstItem="tuV-uh-DHR" firstAttribute="leading" secondItem="C9K-db-G0Y" secondAttribute="trailing" constant="8" id="Kmk-7t-Jhy"/>
                                             <constraint firstItem="tuV-uh-DHR" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="8" id="Kza-1r-oJU"/>
                                             <constraint firstAttribute="trailing" secondItem="hHM-02-1p8" secondAttribute="trailing" constant="8" id="RlY-Tv-sT8"/>
                                             <constraint firstItem="C9K-db-G0Y" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="8" id="UUW-pf-9zV"/>
-                                            <constraint firstItem="PT2-EW-SYe" firstAttribute="leading" secondItem="tuV-uh-DHR" secondAttribute="trailing" constant="8" id="V6Q-ym-0A1"/>
-                                            <constraint firstAttribute="trailing" secondItem="PT2-EW-SYe" secondAttribute="trailing" id="dE7-WI-wQT"/>
                                             <constraint firstItem="hHM-02-1p8" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" id="f1z-1d-Qyt"/>
-                                            <constraint firstItem="PT2-EW-SYe" firstAttribute="width" secondItem="hHM-02-1p8" secondAttribute="width" id="kdS-im-ioG"/>
                                             <constraint firstItem="hHM-02-1p8" firstAttribute="leading" secondItem="tuV-uh-DHR" secondAttribute="trailing" id="mSp-se-YGr"/>
                                             <constraint firstAttribute="bottom" secondItem="C9K-db-G0Y" secondAttribute="bottom" constant="8" id="nZu-n9-oUf"/>
                                             <constraint firstItem="C9K-db-G0Y" firstAttribute="leading" secondItem="EsG-Gz-4g7" secondAttribute="leading" constant="8" id="p6q-g1-0cA"/>
                                             <constraint firstAttribute="bottom" secondItem="hHM-02-1p8" secondAttribute="bottom" id="rVC-2x-462"/>
-                                            <constraint firstItem="PT2-EW-SYe" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" id="wdw-c1-KrI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REW-j5-GM4" userLabel="MembersTableView">
