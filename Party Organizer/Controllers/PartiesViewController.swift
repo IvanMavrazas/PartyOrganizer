@@ -55,6 +55,21 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         return numberOfParties
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
+            print("Delete")
+            self.deleteParty(index: indexPath.row)
+            tableView.reloadData()
+        }
+        let del =  UISwipeActionsConfiguration(actions: [delete])
+        del.performsFirstActionWithFullSwipe = false
+        if indexPath.section != 0 {
+            return del
+        }
+        return del
+        
+    }
+
 
     
     //MARK: Buttons
@@ -69,6 +84,8 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     //MARK: Functions
     
+    //Add party
+    
     func addParty() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let createPartyVC = storyboard.instantiateViewController(withIdentifier: "CreatePartyScreenViewController") as? CreatePartyScreenViewController else {
@@ -79,6 +96,11 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         show(createPartyVC, sender: self)
     }
     
+    //Delete party
+    
+    func deleteParty(index: Int) {
+        parties.remove(at: index)
+    }
 
     // Adding corner radius on createPartyButton
     
@@ -94,6 +116,7 @@ extension PartiesViewController: PartySavedDelegate {
         let oneParty = Party(partyName: partyName, partyDate: partyDateAndTime, partyDescription: partyDescription)
         parties.append(oneParty)
         print(oneParty)
+        
     }
     
 }
