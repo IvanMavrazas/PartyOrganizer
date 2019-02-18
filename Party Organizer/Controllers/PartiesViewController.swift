@@ -56,10 +56,11 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
-            print("Delete")
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, actionPerformed: (Bool) ->()) in
+            
             self.deleteParty(index: indexPath.row)
-            tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            actionPerformed(true)
         }
         let del =  UISwipeActionsConfiguration(actions: [delete])
         del.performsFirstActionWithFullSwipe = false
@@ -84,7 +85,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     //MARK: Functions
     
-    //Add party
+    // Add party
     
     func addParty() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -96,7 +97,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         show(createPartyVC, sender: self)
     }
     
-    //Delete party
+    // Delete party
     
     func deleteParty(index: Int) {
         parties.remove(at: index)
