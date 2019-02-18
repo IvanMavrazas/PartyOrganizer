@@ -10,13 +10,13 @@ import UIKit
 
 class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    // CreatePartyVC
     
     var parties = [Party]()
     
     @IBOutlet weak var emptyScreenView: UIView!
     @IBOutlet weak var partiesTableView: UITableView!
     @IBOutlet weak var createPartyButton: UIButton!
+    
     // Lifecycle
     
     override func viewDidLoad() {
@@ -25,7 +25,6 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         partiesTableView.delegate = self
         partiesTableView.dataSource = self
         partiesTableView.register(UINib(nibName: "PartyTableViewCell", bundle: nil), forCellReuseIdentifier: "PartyTableViewCell")
-        partiesTableView.rowHeight = UITableView.automaticDimension
         
     }
     
@@ -70,7 +69,6 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         return del
         
     }
-
 
     
     //MARK: Buttons

@@ -31,6 +31,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         
         membersTableView.delegate = self
         membersTableView.dataSource = self
+        membersTableView.register(UITableViewCell.self, forCellReuseIdentifier:"partyMemberCell")
         
         datePicker.isHidden = true
         descriptionPartyTextView.isHidden = false
@@ -40,7 +41,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     //MARK: TableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "partyMemberCell", for: indexPath)
         
         return cell
     }
