@@ -41,6 +41,7 @@ class MembersViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
         }
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     

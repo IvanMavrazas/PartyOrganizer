@@ -15,7 +15,8 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         didSet {
             memberTableView.reloadData()
         }
-    }    
+    }
+    
     
     @IBOutlet weak var memberTableView: UITableView!
     
@@ -43,12 +44,15 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
-        cell.selectionStyle = .none
+        
         cell.delegate = self
         
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
         }
+        
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
@@ -64,20 +68,22 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         return 60
     }
     
+    
     //MARK: TableView Delegate methods
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = .none
-        }
-    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = .checkmark
+        
+        if memberTableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
+            memberTableView.cellForRow(at: indexPath)?.accessoryType = .none
+        } else {
+            memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
+
+        memberTableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
     
     

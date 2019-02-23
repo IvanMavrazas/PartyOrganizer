@@ -14,6 +14,7 @@ protocol PartySavedDelegate {
 class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var delegate: PartySavedDelegate?
+    var profiles: Profiles?
     
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var partyNameTextField: UITextField!

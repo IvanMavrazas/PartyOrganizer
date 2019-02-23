@@ -11,7 +11,7 @@ import UIKit
 class ProfileScreen: UIViewController {
     
     var profiles: Profiles?
-    var data: Object?
+//    var data: Object?
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!

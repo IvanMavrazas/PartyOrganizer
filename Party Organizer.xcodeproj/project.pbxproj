@@ -18,6 +18,7 @@
 		0B228A3222120BB100081B4F /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A3122120BB100081B4F /* ProfileScreen.swift */; };
 		0B228A392212253300081B4F /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A372212253300081B4F /* MemberTableViewCell.swift */; };
 		0B228A3A2212253300081B4F /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A382212253300081B4F /* MemberTableViewCell.xib */; };
+		0B593FDF2221673900B35FD2 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B593FDE2221673900B35FD2 /* Member.swift */; };
 		0B77F7E22216E944006576A9 /* PartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77F7E12216E944006576A9 /* PartiesViewController.swift */; };
 		0BF04837221481E600C869B1 /* SF Compact in Resources */ = {isa = PBXBuildFile; fileRef = 0BF04836221481E600C869B1 /* SF Compact */; };
 		0BF048392214893B00C869B1 /* AddMemberToParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF048382214893B00C869B1 /* AddMemberToParty.swift */; };
@@ -41,6 +42,7 @@
 		0B228A3122120BB100081B4F /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		0B228A372212253300081B4F /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		0B228A382212253300081B4F /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
+		0B593FDE2221673900B35FD2 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		0B77F7E12216E944006576A9 /* PartiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesViewController.swift; sourceTree = "<group>"; };
 		0BF04836221481E600C869B1 /* SF Compact */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Compact"; sourceTree = SOURCE_ROOT; };
 		0BF048382214893B00C869B1 /* AddMemberToParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberToParty.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				0BF8353522131F5C002ECD6C /* MembersModelObject.swift */,
 				0B158A2F22143DE8004CAC0E /* Party.swift */,
+				0B593FDE2221673900B35FD2 /* Member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				0B228A2B2212093900081B4F /* MembersViewController.swift in Sources */,
 				0B228A3022120B3900081B4F /* PartyMemberPreviewScreen.swift in Sources */,
 				0BF048392214893B00C869B1 /* AddMemberToParty.swift in Sources */,
+				0B593FDF2221673900B35FD2 /* Member.swift in Sources */,
 				0B77F7E22216E944006576A9 /* PartiesViewController.swift in Sources */,
 				0B228A182212077E00081B4F /* AppDelegate.swift in Sources */,
 				0B228A2E22120ADC00081B4F /* CreatePartyScreenViewController.swift in Sources */,
