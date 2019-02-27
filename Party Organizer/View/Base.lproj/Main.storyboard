@@ -327,14 +327,14 @@
                                             <constraint firstAttribute="trailing" secondItem="XdG-d8-BAq" secondAttribute="trailing" id="xOz-nq-9Xs"/>
                                         </constraints>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-7i-e6l">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-7i-e6l">
                                         <rect key="frame" x="0.0" y="339" width="375" height="308"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="308" id="O0E-ED-5x0"/>
                                         </constraints>
-                                        <date key="date" timeIntervalSinceReferenceDate="571842860.72577405">
-                                            <!--2019-02-14 13:14:20 +0000-->
+                                        <date key="date" timeIntervalSinceReferenceDate="598022060.72577405">
+                                            <!--2019-12-14 13:14:20 +0000-->
                                         </date>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="571834800">
                                             <!--2019-02-14 11:00:00 +0000-->

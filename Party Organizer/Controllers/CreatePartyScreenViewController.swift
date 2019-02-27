@@ -44,6 +44,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "partyMemberCell", for: indexPath)
         
+        
         return cell
     }
     

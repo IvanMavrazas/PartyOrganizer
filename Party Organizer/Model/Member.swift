@@ -9,6 +9,11 @@
 import Foundation
 
 class Member {
-    var name: String = ""
-    var isChecked: Bool = false
+    var name: String
+    var isChecked: Bool
+    
+    init (memberName: String, checked: Bool) {
+        name = memberName
+        isChecked = checked
+    }
 }

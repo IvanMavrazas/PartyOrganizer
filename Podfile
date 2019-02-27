@@ -8,5 +8,7 @@ target 'Party Organizer' do
 
 pod 'Kingfisher'
 pod 'SwipeCellKit'
+pod 'Alamofire'
+pod 'SwiftyJSON'
 
 end

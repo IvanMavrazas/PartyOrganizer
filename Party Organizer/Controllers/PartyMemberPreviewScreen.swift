@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import Alamofire
+import SwiftyJSON
 
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -16,7 +18,10 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
             memberTableView.reloadData()
         }
     }
-    
+    var member: Member?
+    var members = [Member]()
+    var alamoMembers = [String]()
+    let memberURL = "http://api-coin.quantox.tech/profiles.json"
     
     @IBOutlet weak var memberTableView: UITableView!
     
@@ -28,8 +33,10 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         memberTableView.delegate = self
         memberTableView.dataSource = self
         setupNavigationBar()
-        
         memberTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
+        
+        getAlamoData(url: memberURL)
+        
         
         fetchData()
     }
@@ -46,13 +53,15 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
         
         cell.delegate = self
+        cell.accessoryType = .disclosureIndicator
         
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
+            
         }
+       
         
-        cell.accessoryType = .disclosureIndicator
-        
+    
         return cell
     }
     
@@ -73,8 +82,12 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//         members[indexPath.row].isChecked = !members[indexPath.row].isChecked
+        
+        
+        
         if memberTableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            memberTableView.cellForRow(at: indexPath)?.accessoryType = .none
+            memberTableView.cellForRow(at: indexPath)?.accessoryType = .disclosureIndicator
         } else {
             memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
@@ -86,25 +99,51 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
+    //MARK: Alamofire
+    
+    func getAlamoData(url: String) {
+        Alamofire.request(url,method: .get).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                print("Success!Got the data!")
+                let memberJSON: JSON = JSON(response.result.value!)
+//                print(memberJSON)
+                
+                self.updateMembersData(json: memberJSON)
+                
+            } else {
+                print("Error \(String(describing: response.result.error))")
+            }
+        }
+    }
+    
+    func updateMembersData(json: JSON) {
+        
+        let arrayUsernames = json["profiles"].arrayValue.map({$0["username"].stringValue})
+        alamoMembers.append(contentsOf: arrayUsernames)
+        print(alamoMembers)
+    }
+    
     
     //MARK: Fetch data
     
     func fetchData() {
         guard let url = URL(string: "http://api-coin.quantox.tech/profiles.json") else { return }
         print("url je \(url)")
-        
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if error != nil { return }
-            
+
             guard let httpResponse = response as? HTTPURLResponse else { return }
-            
+
             if !(200..<300).contains(httpResponse.statusCode) { return }
-            
+
             guard let data = data else { return }
-            
+
             let decoder = JSONDecoder()
             do {
                 let object = try decoder.decode(Object.self, from: data)
