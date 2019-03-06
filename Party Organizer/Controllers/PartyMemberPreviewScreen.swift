@@ -8,8 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Alamofire
-import SwiftyJSON
 
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -20,8 +18,6 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     }
     var member: Member?
     var members = [Member]()
-    var alamoMembers = [String]()
-    let memberURL = "http://api-coin.quantox.tech/profiles.json"
     
     @IBOutlet weak var memberTableView: UITableView!
     
@@ -34,9 +30,6 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         memberTableView.dataSource = self
         setupNavigationBar()
         memberTableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberTableViewCell")
-        
-        getAlamoData(url: memberURL)
-        
         
         fetchData()
     }
@@ -59,9 +52,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
             cell.profile = profiles
             
         }
-       
         
-    
         return cell
     }
     
@@ -82,47 +73,26 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//         members[indexPath.row].isChecked = !members[indexPath.row].isChecked
+        memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
         
-        
-        if memberTableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            memberTableView.cellForRow(at: indexPath)?.accessoryType = .disclosureIndicator
-        } else {
-            memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        if let profiles = data?.profiles[indexPath.item].username {
+            let member = Member(memberName: profiles)
+            members.append(member)
+            print("MEMBERS \(members.count)")
+//            print(indexPath.item)
         }
-
-        memberTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        memberTableView.cellForRow(at: indexPath)?.accessoryType = .disclosureIndicator
+        
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
-    }
-    
-    //MARK: Alamofire
-    
-    func getAlamoData(url: String) {
-        Alamofire.request(url,method: .get).responseJSON {
-            response in
-            if response.result.isSuccess {
-                
-                print("Success!Got the data!")
-                let memberJSON: JSON = JSON(response.result.value!)
-//                print(memberJSON)
-                
-                self.updateMembersData(json: memberJSON)
-                
-            } else {
-                print("Error \(String(describing: response.result.error))")
-            }
-        }
-    }
-    
-    func updateMembersData(json: JSON) {
-        
-        let arrayUsernames = json["profiles"].arrayValue.map({$0["username"].stringValue})
-        alamoMembers.append(contentsOf: arrayUsernames)
-        print(alamoMembers)
     }
     
     
@@ -131,19 +101,19 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     func fetchData() {
         guard let url = URL(string: "http://api-coin.quantox.tech/profiles.json") else { return }
         print("url je \(url)")
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-
+        
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if error != nil { return }
-
+            
             guard let httpResponse = response as? HTTPURLResponse else { return }
-
+            
             if !(200..<300).contains(httpResponse.statusCode) { return }
-
+            
             guard let data = data else { return }
-
+            
             let decoder = JSONDecoder()
             do {
                 let object = try decoder.decode(Object.self, from: data)

@@ -264,33 +264,42 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsG-Gz-4g7" userLabel="MembersView">
-                                        <rect key="frame" x="0.0" y="85" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9K-db-G0Y">
-                                                <rect key="frame" x="8" y="8" width="69.5" height="34"/>
+                                                <rect key="frame" x="8" y="8" width="69.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-uh-DHR">
-                                                <rect key="frame" x="85.5" y="8" width="20.5" height="34"/>
+                                                <rect key="frame" x="85.5" y="8" width="20.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-02-1p8" userLabel="MembersSelected">
-                                                <rect key="frame" x="106" y="0.0" width="261" height="50"/>
+                                                <rect key="frame" x="106" y="0.0" width="261" height="40"/>
                                                 <connections>
                                                     <action selector="membersButtonPressed:" destination="C23-lM-tkg" eventType="touchUpInside" id="xGT-Ra-dMa"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="8Oo-aX-QNM">
+                                                <rect key="frame" x="348" y="14" width="12" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="8Oo-aX-QNM" secondAttribute="height" multiplier="1:1" id="ClX-CL-SA6"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="34k-cg-Hld"/>
+                                            <constraint firstAttribute="height" constant="40" id="34k-cg-Hld"/>
+                                            <constraint firstItem="8Oo-aX-QNM" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="14" id="5Ir-k5-PRw"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Oo-aX-QNM" secondAttribute="bottom" constant="14" id="6Fn-rd-FVa"/>
                                             <constraint firstAttribute="bottom" secondItem="tuV-uh-DHR" secondAttribute="bottom" constant="8" id="BZr-OK-qzt"/>
                                             <constraint firstItem="tuV-uh-DHR" firstAttribute="leading" secondItem="C9K-db-G0Y" secondAttribute="trailing" constant="8" id="Kmk-7t-Jhy"/>
                                             <constraint firstItem="tuV-uh-DHR" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="8" id="Kza-1r-oJU"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Oo-aX-QNM" secondAttribute="trailing" constant="15" id="NRQ-se-goA"/>
                                             <constraint firstAttribute="trailing" secondItem="hHM-02-1p8" secondAttribute="trailing" constant="8" id="RlY-Tv-sT8"/>
                                             <constraint firstItem="C9K-db-G0Y" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="8" id="UUW-pf-9zV"/>
                                             <constraint firstItem="hHM-02-1p8" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" id="f1z-1d-Qyt"/>
@@ -301,7 +310,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REW-j5-GM4" userLabel="MembersTableView">
-                                        <rect key="frame" x="0.0" y="136" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="126" width="375" height="150"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XdG-d8-BAq">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -405,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE6-ip-fMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4020" y="768.66566716641682"/>
+            <point key="canvasLocation" x="3282" y="731"/>
         </scene>
         <!--Party Member Preview Screen-->
         <scene sceneID="vMF-HR-ply">
@@ -416,7 +425,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MfA-uk-Pmr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="partyMemberCell" id="KsH-Me-PT9">
@@ -457,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7io-vf-JLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5704.8000000000002" y="808.24587706146929"/>
+            <point key="canvasLocation" x="4210" y="731"/>
         </scene>
         <!--Profile Screen-->
         <scene sceneID="qoD-Nh-UT0">
@@ -674,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLm-KP-crd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6512.8000000000002" y="878.41079460269873"/>
+            <point key="canvasLocation" x="5110" y="731"/>
         </scene>
         <!--Add Member To Party-->
         <scene sceneID="wxf-GU-bKl">
@@ -703,7 +712,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgl-UL-obJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5734" y="1657"/>
+            <point key="canvasLocation" x="5110" y="1514"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4JM-ea-1h7">
@@ -743,42 +752,10 @@
             </objects>
             <point key="canvasLocation" x="1385" y="683"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qYo-hD-2bt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tZf-eb-Vya" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wad-Pj-4f9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yaX-aI-AeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3292" y="768.66566716641682"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="v8o-h1-Ltm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mqc-v1-WAl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o2f-ma-apO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Z0q-Ia-MiP" kind="relationship" relationship="rootViewController" id="mWM-s2-IaV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pct-o8-Xqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4765.6000000000004" y="808.24587706146929"/>
-        </scene>
     </scenes>
     <resources>
         <image name="check_in_icon_selected" width="20" height="20"/>
+        <image name="disclosure" width="256" height="256"/>
         <image name="starfilled" width="37" height="35"/>
     </resources>
 </document>
