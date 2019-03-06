@@ -9,8 +9,13 @@
 import UIKit
 import Kingfisher
 
+protocol MembersSavedDelegate: class {
+    func partyMembersSaved(members: [Member]?)
+}
+
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var delegate: MembersSavedDelegate?
     var data: Object? {
         didSet {
             memberTableView.reloadData()
@@ -91,8 +96,12 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
+    //MARK: SaveButtonPressed
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        
+
+        delegate?.partyMembersSaved(members: members)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

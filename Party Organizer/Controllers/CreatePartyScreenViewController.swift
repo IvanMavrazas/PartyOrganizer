@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol PartySavedDelegate {
     func userSavedParty(partyName: String,partyDateAndTime: String,partyDescription: String)
 }
@@ -32,7 +33,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         
         membersTableView.delegate = self
         membersTableView.dataSource = self
-        membersTableView.register(UITableViewCell.self, forCellReuseIdentifier:"partyMemberCell")
+        membersTableView.register(UINib(nibName: "CreatePartyTableViewCell", bundle: nil), forCellReuseIdentifier: "CreatePartyTableViewCell")
         
         datePicker.isHidden = true
         descriptionPartyTextView.isHidden = false
@@ -42,7 +43,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     //MARK: TableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "partyMemberCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatePartyTableViewCell", for: indexPath) as! CreatePartyTableViewCell
         
         
         return cell
@@ -57,7 +58,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     //MARK: Buttons
     
     @IBAction func saveNewPartyPressed(_ sender: UIBarButtonItem) {
-        if  let party = partyNameTextField.text,let dateAndTime = startDateAndTimeTextField.text, let description = descriptionPartyTextView.text {
+        if let party = partyNameTextField.text,let dateAndTime = startDateAndTimeTextField.text, let description = descriptionPartyTextView.text {
             delegate?.userSavedParty(partyName: party, partyDateAndTime: dateAndTime, partyDescription: description)
         }
         self.navigationController?.popViewController(animated: true)
@@ -68,6 +69,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         guard let partyMemberPreviewScreen = storyboard?.instantiateViewController(withIdentifier: "PartyMemberPreviewScreen") as? PartyMemberPreviewScreen else {
             fatalError("Couldn't load PartyMemberPreviewScreen")
         }
+        partyMemberPreviewScreen.delegate = self
         partyMemberPreviewScreen.hidesBottomBarWhenPushed = true
         show(partyMemberPreviewScreen, sender: self)
     }
@@ -110,3 +112,12 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     }
 }
 
+extension CreatePartyScreenViewController: MembersSavedDelegate {
+    func partyMembersSaved(members: [Member]?) {
+        
+        print("member \(String(describing: members![0].name))")
+        print("member \(String(describing: members![1].name))")
+        print("member \(String(describing: members![2].name))")
+    }
+    
+}

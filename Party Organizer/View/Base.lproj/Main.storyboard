@@ -425,7 +425,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MfA-uk-Pmr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="partyMemberCell" id="KsH-Me-PT9">
@@ -458,7 +458,11 @@
                         <viewLayoutGuide key="safeArea" id="BvN-Lt-eiV"/>
                     </view>
                     <navigationItem key="navigationItem" id="AJA-nf-RWA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3kX-n1-Ai2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3kX-n1-Ai2">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Z0q-Ia-MiP" id="etx-k1-Ulf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="memberTableView" destination="MfA-uk-Pmr" id="qVN-nU-SV6"/>
@@ -466,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7io-vf-JLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="731"/>
+            <point key="canvasLocation" x="5148" y="730.88455772113946"/>
         </scene>
         <!--Profile Screen-->
         <scene sceneID="qoD-Nh-UT0">
@@ -683,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLm-KP-crd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5110" y="731"/>
+            <point key="canvasLocation" x="6048.8000000000002" y="730.88455772113946"/>
         </scene>
         <!--Add Member To Party-->
         <scene sceneID="wxf-GU-bKl">
@@ -712,7 +716,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgl-UL-obJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5110" y="1514"/>
+            <point key="canvasLocation" x="6049" y="1461"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4JM-ea-1h7">
@@ -751,6 +755,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNL-wv-7Xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1385" y="683"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="glt-jB-t87">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nk3-1e-OMg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c4u-We-wsO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z0q-Ia-MiP" kind="relationship" relationship="rootViewController" id="wf3-gm-bPN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LZ-gJ-i8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4208.8000000000002" y="730.88455772113946"/>
         </scene>
     </scenes>
     <resources>

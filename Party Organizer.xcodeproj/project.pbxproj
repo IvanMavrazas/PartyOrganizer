@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B158A3022143DE8004CAC0E /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B158A2F22143DE8004CAC0E /* Party.swift */; };
+		0B1D0B9822304DA800571E0B /* CreatePartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D0B9622304DA800571E0B /* CreatePartyTableViewCell.swift */; };
+		0B1D0B9922304DA800571E0B /* CreatePartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1D0B9722304DA800571E0B /* CreatePartyTableViewCell.xib */; };
 		0B228A182212077E00081B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B228A172212077E00081B4F /* AppDelegate.swift */; };
 		0B228A1D2212077E00081B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A1B2212077E00081B4F /* Main.storyboard */; };
 		0B228A1F2212077F00081B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B228A1E2212077F00081B4F /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		0B158A2F22143DE8004CAC0E /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		0B1D0B9622304DA800571E0B /* CreatePartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyTableViewCell.swift; sourceTree = "<group>"; };
+		0B1D0B9722304DA800571E0B /* CreatePartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePartyTableViewCell.xib; sourceTree = "<group>"; };
 		0B228A142212077E00081B4F /* Party Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B228A172212077E00081B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B228A1C2212077E00081B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1D0B9522304D6D00571E0B /* CreatePartyCell */ = {
+			isa = PBXGroup;
+			children = (
+				0B1D0B9622304DA800571E0B /* CreatePartyTableViewCell.swift */,
+				0B1D0B9722304DA800571E0B /* CreatePartyTableViewCell.xib */,
+			);
+			path = CreatePartyCell;
+			sourceTree = "<group>";
+		};
 		0B228A0B2212077E00081B4F = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0B228A1B2212077E00081B4F /* Main.storyboard */,
+				0B1D0B9522304D6D00571E0B /* CreatePartyCell */,
 				0BF835322212353A002ECD6C /* PartyCell */,
 				0B228A3B2212297000081B4F /* MemberCell */,
 			);
@@ -229,6 +243,7 @@
 			files = (
 				0B228A222212077F00081B4F /* LaunchScreen.storyboard in Resources */,
 				0BF835312212352D002ECD6C /* PartyTableViewCell.xib in Resources */,
+				0B1D0B9922304DA800571E0B /* CreatePartyTableViewCell.xib in Resources */,
 				0B228A1F2212077F00081B4F /* Assets.xcassets in Resources */,
 				0B228A1D2212077E00081B4F /* Main.storyboard in Resources */,
 				0BF04837221481E600C869B1 /* SF Compact in Resources */,
@@ -288,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1D0B9822304DA800571E0B /* CreatePartyTableViewCell.swift in Sources */,
 				0BF8353622131F5C002ECD6C /* MembersModelObject.swift in Sources */,
 				0BF835302212352D002ECD6C /* PartyTableViewCell.swift in Sources */,
 				0B158A3022143DE8004CAC0E /* Party.swift in Sources */,

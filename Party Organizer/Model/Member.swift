@@ -13,5 +13,6 @@ class Member {
     
     init (memberName: String) {
         name = memberName
+
     }
 }
