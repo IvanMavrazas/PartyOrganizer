@@ -236,7 +236,7 @@
                                         <rect key="frame" x="0.0" y="51" width="375" height="33"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12.12.2019" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10W-s0-rOn">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="33"/>
+                                                <rect key="frame" x="8" y="0.0" width="86" height="33"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="SFCompactText-Regular" family="SF Compact Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -257,7 +257,7 @@
                                             <constraint firstAttribute="trailing" secondItem="UxO-Pt-UWl" secondAttribute="trailing" constant="8" id="CjD-5r-Foi"/>
                                             <constraint firstAttribute="bottom" secondItem="UxO-Pt-UWl" secondAttribute="bottom" id="Dr3-7P-WBu"/>
                                             <constraint firstItem="10W-s0-rOn" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="Hx9-f2-mgZ"/>
-                                            <constraint firstItem="10W-s0-rOn" firstAttribute="leading" secondItem="4zj-ab-qPa" secondAttribute="leading" id="I7R-DR-CLy"/>
+                                            <constraint firstItem="10W-s0-rOn" firstAttribute="leading" secondItem="4zj-ab-qPa" secondAttribute="leading" constant="8" id="I7R-DR-CLy"/>
                                             <constraint firstAttribute="bottom" secondItem="10W-s0-rOn" secondAttribute="bottom" id="UWn-36-wrb"/>
                                             <constraint firstItem="UxO-Pt-UWl" firstAttribute="top" secondItem="4zj-ab-qPa" secondAttribute="top" id="pH9-RH-BkS"/>
                                             <constraint firstItem="UxO-Pt-UWl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="10W-s0-rOn" secondAttribute="trailing" constant="8" symbolic="YES" id="wWU-wu-orE"/>
@@ -279,7 +279,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-02-1p8" userLabel="MembersSelected">
-                                                <rect key="frame" x="106" y="0.0" width="261" height="40"/>
+                                                <rect key="frame" x="108" y="0.0" width="259" height="40"/>
                                                 <connections>
                                                     <action selector="membersButtonPressed:" destination="C23-lM-tkg" eventType="touchUpInside" id="xGT-Ra-dMa"/>
                                                 </connections>
@@ -303,7 +303,7 @@
                                             <constraint firstAttribute="trailing" secondItem="hHM-02-1p8" secondAttribute="trailing" constant="8" id="RlY-Tv-sT8"/>
                                             <constraint firstItem="C9K-db-G0Y" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" constant="8" id="UUW-pf-9zV"/>
                                             <constraint firstItem="hHM-02-1p8" firstAttribute="top" secondItem="EsG-Gz-4g7" secondAttribute="top" id="f1z-1d-Qyt"/>
-                                            <constraint firstItem="hHM-02-1p8" firstAttribute="leading" secondItem="tuV-uh-DHR" secondAttribute="trailing" id="mSp-se-YGr"/>
+                                            <constraint firstItem="hHM-02-1p8" firstAttribute="leading" secondItem="tuV-uh-DHR" secondAttribute="trailing" constant="2" id="mSp-se-YGr"/>
                                             <constraint firstAttribute="bottom" secondItem="C9K-db-G0Y" secondAttribute="bottom" constant="8" id="nZu-n9-oUf"/>
                                             <constraint firstItem="C9K-db-G0Y" firstAttribute="leading" secondItem="EsG-Gz-4g7" secondAttribute="leading" constant="8" id="p6q-g1-0cA"/>
                                             <constraint firstAttribute="bottom" secondItem="hHM-02-1p8" secondAttribute="bottom" id="rVC-2x-462"/>

@@ -24,9 +24,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="346" height="68.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6R-X3-EGb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6R-X3-EGb">
                         <rect key="frame" x="8" y="8" width="330" height="52.5"/>
-                        <fontDescription key="fontDescription" name="SFCompactText-Regular" family="SF Compact Text" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="SFCompactText-Regular" family="SF Compact Text" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

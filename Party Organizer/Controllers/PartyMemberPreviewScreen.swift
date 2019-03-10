@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 protocol MembersSavedDelegate: class {
-    func partyMembersSaved(members: [Member]?)
+    func partyMembersSaved(addedMembers: [Member]?)
 }
 
 class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -84,8 +84,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         if let profiles = data?.profiles[indexPath.item].username {
             let member = Member(memberName: profiles)
             members.append(member)
-            print("MEMBERS \(members.count)")
-//            print(indexPath.item)
+
         }
     }
     
@@ -100,7 +99,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
 
-        delegate?.partyMembersSaved(members: members)
+        delegate?.partyMembersSaved(addedMembers: members)
         self.navigationController?.popViewController(animated: true)
     }
     

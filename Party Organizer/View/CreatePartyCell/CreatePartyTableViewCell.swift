@@ -9,6 +9,14 @@
 import UIKit
 
 class CreatePartyTableViewCell: UITableViewCell {
+    
+    var member: Member? {
+        didSet {
+            if let memberName = member?.name {
+                memberLabel.text = memberName
+            }
+        }
+    }
 
     @IBOutlet weak var memberLabel: UILabel!
     
@@ -16,7 +24,5 @@ class CreatePartyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
-
     
 }

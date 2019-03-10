@@ -14,8 +14,15 @@ protocol PartySavedDelegate {
 
 class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var members: [Member]? {
+        didSet {
+            membersTableView.reloadData()
+            
+        }
+    }
     var delegate: PartySavedDelegate?
     var profiles: Profiles?
+    var numberOfMembers = 0
     
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var partyNameTextField: UITextField!
@@ -28,6 +35,10 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     
     // Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateNumberOfMembersLabel()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,22 +49,42 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         datePicker.isHidden = true
         descriptionPartyTextView.isHidden = false
         descriptionPartyTextView.text = nil
+        
+        
     }
+    
     
     //MARK: TableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreatePartyTableViewCell", for: indexPath) as! CreatePartyTableViewCell
         
-        
+        cell.member = members?[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        if let members = members {
+            if members.count != 0 {
+                return members.count
+            }
+            
+        }
+        
+        return 0
     }
-  
+    
+    
+    //MARK: Functions
+    
+    func updateNumberOfMembersLabel() {
+        
+        if let members = members {
+        numberOfMembers = members.count
+        }
+        numberOfMembersLabel.text = "(\(numberOfMembers))"
+    }
     
     //MARK: Buttons
     
@@ -106,18 +137,17 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy / hh/mm"
+        dateFormatter.dateFormat = "MM/dd/yyyy/ HH/mm"
         startDateAndTimeTextField.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
 }
 
 extension CreatePartyScreenViewController: MembersSavedDelegate {
-    func partyMembersSaved(members: [Member]?) {
+    func partyMembersSaved(addedMembers: [Member]?) {
         
-        print("member \(String(describing: members![0].name))")
-        print("member \(String(describing: members![1].name))")
-        print("member \(String(describing: members![2].name))")
+        self.members = addedMembers
+        
     }
     
 }
