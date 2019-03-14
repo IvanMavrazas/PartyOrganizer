@@ -61,7 +61,7 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
             tableView.deleteRows(at: [indexPath], with: .automatic)
             actionPerformed(true)
         }
-        let del =  UISwipeActionsConfiguration(actions: [delete])
+        let del = UISwipeActionsConfiguration(actions: [delete])
         del.performsFirstActionWithFullSwipe = false
         if indexPath.section != 0 {
             return del
@@ -70,6 +70,10 @@ class PartiesViewController: UIViewController,UITableViewDataSource,UITableViewD
         
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        partiesTableView.deselectRow(at: indexPath, animated: true)
+        addParty()
+    }
     
     //MARK: Buttons
     

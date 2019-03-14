@@ -8,28 +8,34 @@
 
 import UIKit
 
-class AddMemberToParty: UITableViewController {
+class AddMemberToParty: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var parties = [Party]()
+    var parties: [Party]? {
+        didSet {
+            
+        }
+    }
     
+    @IBOutlet var partiesTableView: UITableView!
     //Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        partiesTableView.delegate = self
+        partiesTableView.dataSource = self
     }
     
     // MARK: - Table view data source
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "partyCell", for: indexPath)
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return parties.count
+        return 1
     }
     
 }

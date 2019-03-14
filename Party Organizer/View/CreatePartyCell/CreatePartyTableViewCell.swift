@@ -20,9 +20,4 @@ class CreatePartyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var memberLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
 }

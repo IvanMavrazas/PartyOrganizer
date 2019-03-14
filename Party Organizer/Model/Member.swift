@@ -10,9 +10,10 @@ import Foundation
 
 class Member {
     var name: String
+    var isChecked: Bool = false
     
-    init (memberName: String) {
+    init (memberName: String,checked: Bool) {
         name = memberName
-
+        isChecked = checked
     }
 }

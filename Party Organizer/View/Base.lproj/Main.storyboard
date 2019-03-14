@@ -713,6 +713,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5oV-Xq-CgU"/>
+                    <connections>
+                        <outlet property="membersTableView" destination="evE-wp-3KE" id="YXZ-aG-Yva"/>
+                        <outlet property="partiesTableView" destination="evE-wp-3KE" id="Pf6-AA-Ex0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgl-UL-obJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

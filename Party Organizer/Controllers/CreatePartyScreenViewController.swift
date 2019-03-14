@@ -14,12 +14,7 @@ protocol PartySavedDelegate {
 
 class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var members: [Member]? {
-        didSet {
-            membersTableView.reloadData()
-            
-        }
-    }
+    var members: [Member]? = []
     var delegate: PartySavedDelegate?
     var profiles: Profiles?
     var numberOfMembers = 0
@@ -49,7 +44,7 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         datePicker.isHidden = true
         descriptionPartyTextView.isHidden = false
         descriptionPartyTextView.text = nil
-        
+        startDateAndTimeTextField.isUserInteractionEnabled = false
         
     }
     
@@ -75,8 +70,19 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         return 0
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            self.deleteMember(index: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            updateNumberOfMembersLabel()
+        }
+    }
+    
     
     //MARK: Functions
+    
+    // Update number of Members
     
     func updateNumberOfMembersLabel() {
         
@@ -84,6 +90,12 @@ class CreatePartyScreenViewController: UIViewController,UITableViewDataSource,UI
         numberOfMembers = members.count
         }
         numberOfMembersLabel.text = "(\(numberOfMembers))"
+    }
+    
+    // Delete member
+    
+    func deleteMember(index: Int) {
+        members?.remove(at: index)
     }
     
     //MARK: Buttons
@@ -147,7 +159,7 @@ extension CreatePartyScreenViewController: MembersSavedDelegate {
     func partyMembersSaved(addedMembers: [Member]?) {
         
         self.members = addedMembers
-        
+        membersTableView.reloadData()
     }
     
 }

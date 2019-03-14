@@ -21,7 +21,7 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
             memberTableView.reloadData()
         }
     }
-    var member: Member?
+    
     var members = [Member]()
     
     @IBOutlet weak var memberTableView: UITableView!
@@ -51,11 +51,10 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
         
         cell.delegate = self
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryType = .none
         
         if let profiles = data?.profiles[indexPath.row] {
             cell.profile = profiles
-            
         }
         
         return cell
@@ -76,29 +75,29 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     
     //MARK: TableView Delegate methods
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
+       memberTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+     
         
         if let profiles = data?.profiles[indexPath.item].username {
-            let member = Member(memberName: profiles)
+            let member = Member(memberName: profiles, checked: true)
             members.append(member)
-
         }
+        
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        memberTableView.cellForRow(at: indexPath)?.accessoryType = .disclosureIndicator
-        
+
+        memberTableView.cellForRow(at: indexPath)?.accessoryType = .none
         
     }
-    
     //MARK: SaveButtonPressed
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-
+        
         delegate?.partyMembersSaved(addedMembers: members)
         self.navigationController?.popViewController(animated: true)
     }
