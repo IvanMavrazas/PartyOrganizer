@@ -92,6 +92,15 @@ class PartyMemberPreviewScreen: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
         memberTableView.cellForRow(at: indexPath)?.accessoryType = .none
+        if let profiles = data?.profiles[indexPath.item].username {
+            let member = Member(memberName: profiles, checked: false)
+            
+            let index = members.firstIndex(where:  { aMember -> Bool in
+                member.name == aMember.name
+            })
+            
+            members.remove(at: index!)
+        }
         
     }
     //MARK: SaveButtonPressed
